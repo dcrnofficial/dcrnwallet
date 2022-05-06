@@ -38,3 +38,7 @@ require (
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7
 	google.golang.org/grpc v1.25.1
 )
+replace (
+	github.com/decred/dcrd/chaincfg/v3 v3.0.0-20200215031403-6b2ce76f0986 => ./chaincfg
+	github.com/decred/dcrd/wire v1.3.0 => ./wire
+)
