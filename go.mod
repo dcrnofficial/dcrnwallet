@@ -7,6 +7,7 @@ require (
 	github.com/decred/dcrd/addrmgr v1.1.0
 	github.com/decred/dcrd/blockchain/stake/v3 v3.0.0-20200215031403-6b2ce76f0986
 	github.com/decred/dcrd/blockchain/standalone v1.1.0
+	github.com/decred/dcrd/blockchain/v2 v2.1.0 // indirect
 	github.com/decred/dcrd/blockchain/v3 v3.0.0-20200215045506-b2cef202a7cd
 	github.com/decred/dcrd/certgen v1.1.0
 	github.com/decred/dcrd/chaincfg/chainhash v1.0.2
@@ -34,4 +35,10 @@ require (
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7
 	google.golang.org/grpc v1.25.1
+)
+
+replace (
+	github.com/decred/dcrd/blockchain/v3 v3.0.0-20200215045506-b2cef202a7cd => ../dcrnd/blockchain
+	github.com/decred/dcrd/chaincfg/v3 v3.0.0-20200215031403-6b2ce76f0986 => ../dcrnd/chaincfg
+	github.com/decred/dcrd/wire v1.3.0 => ../dcrnd/wire
 )

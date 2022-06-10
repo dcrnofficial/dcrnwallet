@@ -6,6 +6,7 @@ package wallet
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"decred.org/dcrwallet/errors"
@@ -51,6 +52,171 @@ func (w *Wallet) GenerateVoteTx(ctx context.Context, blockHash *chainhash.Hash, 
 		return nil, errors.E(op, err)
 	}
 	return vote, nil
+}
+
+type AllTicketStatus struct {
+	Hash   chainhash.Hash
+	Status int //1:live 2:Expired 3:unMatured
+	Level  int
+}
+
+func (a AllTicketStatus) String() string {
+	if a.Status == 1 {
+		return fmt.Sprintf("%v:live:%d", a.Hash, a.Level)
+	} else if a.Status == 2 {
+		return fmt.Sprintf("%v:expired:%d", a.Hash, a.Level)
+	} else if a.Status == 3 {
+		return fmt.Sprintf("%v:unmatured:%d", a.Hash, a.Level)
+	}
+	return fmt.Sprintf("%v:other:%d", a.Hash, a.Level)
+}
+
+// AllTicketHashes returns the hashes of  tickets
+func (w *Wallet) AllTicketHashes(ctx context.Context, rpcCaller Caller) ([]AllTicketStatus, error) {
+	const op errors.Op = "wallet.LiveTicketHashes"
+
+	var ticketStatus []AllTicketStatus
+	var maybeLive []*chainhash.Hash
+	extraTickets := w.StakeMgr.DumpSStxHashes()
+
+	var tipHeight int32 // Assigned in view below.
+
+	err := walletdb.View(ctx, w.db, func(dbtx walletdb.ReadTx) error {
+		txmgrNs := dbtx.ReadBucket(wtxmgrNamespaceKey)
+
+		// Remove tickets from the extraTickets slice if they will appear in the
+		// ticket iteration below.
+		hashes := extraTickets
+		extraTickets = hashes[:0]
+		for i := range hashes {
+			h := &hashes[i]
+			if !w.TxStore.ExistsTx(txmgrNs, h) {
+				extraTickets = append(extraTickets, *h)
+			}
+		}
+
+		_, tipHeight = w.TxStore.MainChainTip(txmgrNs)
+
+		it := w.TxStore.IterateTickets(dbtx)
+		defer it.Close()
+		for it.Next() {
+			// Tickets that are mined at a height beyond the expiry height can
+			// not be live.
+			hash := it.Hash
+			if ticketExpired(w.chainParams, it.Block.Height, tipHeight) {
+				ticketStatus = append(ticketStatus, AllTicketStatus{
+					Hash:   hash,
+					Status: 2,
+					Level:  1,
+				})
+				continue
+			}
+
+			// Tickets that have not reached ticket maturity are immature.
+			// Exclude them unless the caller requested to include immature
+			// tickets.
+			if !ticketMatured(w.chainParams, it.Block.Height, tipHeight) {
+				ticketStatus = append(ticketStatus, AllTicketStatus{
+					Hash:   hash,
+					Status: 3,
+					Level:  1,
+				})
+				continue
+			} else {
+				ticketStatus = append(ticketStatus, AllTicketStatus{
+					Hash:   hash,
+					Status: 1,
+					Level:  1,
+				})
+				maybeLive = append(maybeLive, &hash)
+			}
+		}
+		return it.Err()
+	})
+	if err != nil {
+		return nil, errors.E(op, err)
+	}
+
+	// Determine if the extra tickets are immature or possibly live.  Because
+	// these transactions are not part of the wallet's transaction history, dcrd
+	// must be queried for their blockchain height.  This functionality requires
+	// the dcrd transaction index to be enabled.
+	var g errgroup.Group
+	type extraTicketResult struct {
+		valid  bool // unspent with known height
+		height int32
+	}
+	extraTicketResults := make([]extraTicketResult, len(extraTickets))
+	for i := range extraTickets {
+		i := i
+		g.Go(func() error {
+			// gettxout is used first as an optimization to check that output 0
+			// of the ticket is unspent.
+			var txOut *dcrdtypes.GetTxOutResult
+			err := rpcCaller.Call(ctx, "gettxout", &txOut, extraTickets[i].String(), 0)
+			if err != nil || txOut == nil {
+				return nil
+			}
+			var grt struct {
+				BlockHeight int32 `json:"blockheight"`
+			}
+			err = rpcCaller.Call(ctx, "getrawtransaction", &grt, extraTickets[i].String(), 1)
+			if err != nil {
+				return nil
+			}
+			extraTicketResults[i] = extraTicketResult{true, grt.BlockHeight}
+			return nil
+		})
+	}
+	err = g.Wait()
+	if err != nil {
+		return nil, err
+	}
+	for i := range extraTickets {
+		r := &extraTicketResults[i]
+		if !r.valid {
+			continue
+		}
+		// Same checks as above in the db view.
+		if ticketExpired(w.chainParams, r.height, tipHeight) {
+			ticketStatus = append(ticketStatus, AllTicketStatus{
+				Hash:   extraTickets[i],
+				Status: 2,
+				Level:  2,
+			})
+			continue
+		}
+		if !ticketMatured(w.chainParams, r.height, tipHeight) {
+			ticketStatus = append(ticketStatus, AllTicketStatus{
+				Hash:   extraTickets[i],
+				Status: 3,
+				Level:  2,
+			})
+			continue
+		} else {
+			ticketStatus = append(ticketStatus, AllTicketStatus{
+				Hash:   extraTickets[i],
+				Status: 1,
+				Level:  2,
+			})
+			maybeLive = append(maybeLive, &extraTickets[i])
+		}
+	}
+	rpc := dcrd.New(rpcCaller)
+	live, err := rpc.ExistsLiveTickets(ctx, maybeLive)
+	if err != nil {
+		return nil, errors.E(op, err)
+	}
+	for i, h := range maybeLive {
+		if live.Get(i) {
+			ticketStatus = append(ticketStatus, AllTicketStatus{
+				Hash:   *h,
+				Status: 1,
+				Level:  3,
+			})
+		}
+	}
+	return ticketStatus, nil
 }
 
 // LiveTicketHashes returns the hashes of live tickets that the wallet has
@@ -367,7 +533,7 @@ func (w *Wallet) RevokeTickets(ctx context.Context, rpcCaller Caller) error {
 		if err != nil {
 			return errors.E(op, err)
 		}
-		log.Infof("Revoked ticket %v with revocation %v", revokableTickets[i],
+		log.Infof("Cmd Revoked ticket %v with revocation %v", revokableTickets[i],
 			&rec.Hash)
 		err = rpc.LoadTxFilter(ctx, false, nil, watch)
 		if err != nil {
@@ -466,7 +632,7 @@ func (w *Wallet) RevokeExpiredTickets(ctx context.Context, p Peer) (err error) {
 				return err
 			}
 
-			log.Infof("Revoking ticket %v with revocation %v", &expired[i],
+			log.Infof("Expired Revoking ticket %v with revocation %v", &expired[i],
 				&rec.Hash)
 
 			watch, err := w.processTransactionRecord(ctx, dbtx, rec, nil, nil)

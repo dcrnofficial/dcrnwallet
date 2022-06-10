@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [1.13, 1.14]
+        go: [1.14]
     steps:
       - name: Set up Go
         uses: actions/setup-go@v1
@@ -18,9 +18,9 @@ jobs:
         env:
           GO111MODULE: "on"
         run: go build ./...
-      - name: Test
-        env:
-          GO111MODULE: "on"
-        run: |
-          export PATH=${PATH}:$(go env GOPATH)/bin
-          sh ./run_tests.sh
+#       - name: Test
+#         env:
+#           GO111MODULE: "on"
+#         run: |
+#           export PATH=${PATH}:$(go env GOPATH)/bin
+#           sh ./run_tests.sh

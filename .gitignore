@@ -5,4 +5,5 @@ vendor
 *~
 .vscode
 .idea
+go.sum
 rpc/tools/bin/

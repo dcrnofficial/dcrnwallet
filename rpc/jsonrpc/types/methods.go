@@ -1368,6 +1368,7 @@ func init() {
 		{"rescanwallet", (*RescanWalletCmd)(nil)},
 		{"revoketickets", (*RevokeTicketsCmd)(nil)},
 		{"sendfrom", (*SendFromCmd)(nil)},
+		{"getUnsignedTx", (*SendFromCmd)(nil)},
 		{"sendmany", (*SendManyCmd)(nil)},
 		{"sendtoaddress", (*SendToAddressCmd)(nil)},
 		{"sendtomultisig", (*SendToMultiSigCmd)(nil)},

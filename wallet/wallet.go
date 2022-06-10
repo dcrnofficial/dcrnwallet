@@ -4037,6 +4037,28 @@ func (w *Wallet) SendOutputs(ctx context.Context, outputs []*wire.TxOut, account
 	return &hash, nil
 }
 
+func (w *Wallet) SendOutputsUnSign(ctx context.Context, outputs []*wire.TxOut, account, changeAccount uint32, minconf int32) (*wire.MsgTx, error) {
+	const op errors.Op = "wallet.SendOutputs"
+	relayFee := w.RelayFee()
+	for _, output := range outputs {
+		err := txrules.CheckOutput(output, relayFee)
+		if err != nil {
+			return nil, errors.E(op, err)
+		}
+	}
+
+	heldUnlock, err := w.holdUnlock()
+	if err != nil {
+		return nil, err
+	}
+	defer heldUnlock.release()
+	tx, err := w.txToOutputs(ctx, "wallet.SendOutputs", outputs, account, changeAccount, minconf, nil, true, relayFee, true)
+	if err != nil {
+		return nil, err
+	}
+	return tx.Tx, nil
+}
+
 // SignatureError records the underlying error when validating a transaction
 // input signature.
 type SignatureError struct {

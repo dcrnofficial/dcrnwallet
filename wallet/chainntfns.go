@@ -416,7 +416,6 @@ func (w *Wallet) processTransactionRecord(ctx context.Context, dbtx walletdb.Rea
 				insert = true
 				break
 			}
-
 			// We are operating as a stake pool. The below
 			// function will ONLY add the ticket into the
 			// stake pool if it has been found within a
@@ -424,7 +423,6 @@ func (w *Wallet) processTransactionRecord(ctx context.Context, dbtx walletdb.Rea
 			if header == nil {
 				break
 			}
-
 			if w.evaluateStakePoolTicket(rec, height, addr) {
 				// Be sure to insert this into the user's stake
 				// pool entry into the stake manager.
@@ -1039,7 +1037,7 @@ func (w *Wallet) RevokeOwnedTickets(ctx context.Context, missedTicketHashes []*c
 	for i := range revocationRecords {
 		w.recentlyPublished[revocationRecords[i].Hash] = struct{}{}
 
-		log.Infof("Revoked ticket %v with revocation %v", ticketHashes[i],
+		log.Infof("Notify Revoked ticket %v with revocation %v", ticketHashes[i],
 			&revocationRecords[i].Hash)
 	}
 	w.recentlyPublishedMu.Unlock()

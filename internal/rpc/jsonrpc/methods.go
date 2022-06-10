@@ -101,6 +101,7 @@ var handlers = map[string]handler{
 	"importscript":            {fn: (*Server).importScript},
 	"importxpub":              {fn: (*Server).importXpub},
 	"listaccounts":            {fn: (*Server).listAccounts},
+	"listtickets":             {fn: (*Server).listTickets},
 	"listlockunspent":         {fn: (*Server).listLockUnspent},
 	"listreceivedbyaccount":   {fn: (*Server).listReceivedByAccount},
 	"listreceivedbyaddress":   {fn: (*Server).listReceivedByAddress},
@@ -115,6 +116,7 @@ var handlers = map[string]handler{
 	"rescanwallet":            {fn: (*Server).rescanWallet},
 	"revoketickets":           {fn: (*Server).revokeTickets},
 	"sendfrom":                {fn: (*Server).sendFrom},
+	"getUnsignedTx":           {fn: (*Server).getUnsignedTx},
 	"sendmany":                {fn: (*Server).sendMany},
 	"sendtoaddress":           {fn: (*Server).sendToAddress},
 	"sendtomultisig":          {fn: (*Server).sendToMultiSig},
@@ -1972,6 +1974,33 @@ func (s *Server) help(ctx context.Context, icmd interface{}) (interface{}, error
 	return nil, rpcErrorf(dcrjson.ErrRPCInvalidParameter, "no help for method %q", *cmd.Command)
 }
 
+// listTickets handles a listtickets
+func (s *Server) listTickets(ctx context.Context, icmd interface{}) (interface{}, error) {
+	w, ok := s.walletLoader.LoadedWallet()
+	if !ok {
+		return nil, errUnloadedWallet
+	}
+
+	n, _ := s.walletLoader.NetworkBackend()
+	rpc, ok := n.(*dcrd.RPC)
+	if !ok {
+		return nil, errRPCClientNotConnected
+	}
+
+	ticketHashes, err := w.AllTicketHashes(ctx, rpc)
+	if err != nil {
+		return nil, err
+	}
+
+	// Compose a slice of strings to return.
+	ticketHashStrs := make([]string, 0, len(ticketHashes))
+	for i := range ticketHashes {
+		ticketHashStrs = append(ticketHashStrs, ticketHashes[i].String())
+	}
+
+	return &types.GetTicketsResult{Hashes: ticketHashStrs}, nil
+}
+
 // listAccounts handles a listaccounts request by returning a map of account
 // names to their balances.
 func (s *Server) listAccounts(ctx context.Context, icmd interface{}) (interface{}, error) {
@@ -2934,7 +2963,86 @@ func (s *Server) sendFrom(ctx context.Context, icmd interface{}) (interface{}, e
 		cmd.ToAddress: amt,
 	}
 
+	pairsByte, _ := json.Marshal(&pairs)
+	accountByte, _ := json.Marshal(&account)
+	minConfByte, _ := json.Marshal(&minConf)
+
+	log.Warnf("pairsByte: %s", string(pairsByte))
+	log.Warnf("accountByte: %s", string(accountByte))
+	log.Warnf("minConfByte: %s", string(minConfByte))
 	return s.sendPairs(ctx, w, pairs, account, minConf)
+}
+
+func (s *Server) getUnsignedTx(ctx context.Context, icmd interface{}) (interface{}, error) {
+	cmd := icmd.(*types.SendFromCmd)
+	w, ok := s.walletLoader.LoadedWallet()
+	if !ok {
+		return nil, errUnloadedWallet
+	}
+
+	// Transaction comments are not yet supported.  Error instead of
+	// pretending to save them.
+	if !isNilOrEmpty(cmd.Comment) || !isNilOrEmpty(cmd.CommentTo) {
+		return nil, rpcErrorf(dcrjson.ErrRPCUnimplemented, "transaction comments are unsupported")
+	}
+
+	account, err := w.AccountNumber(ctx, cmd.FromAccount)
+	if err != nil {
+		return nil, err
+	}
+
+	// Check that signed integer parameters are positive.
+	if cmd.Amount < 0 {
+		return nil, rpcErrorf(dcrjson.ErrRPCInvalidParameter, "negative amount")
+	}
+	minConf := int32(*cmd.MinConf)
+	if minConf < 0 {
+		return nil, rpcErrorf(dcrjson.ErrRPCInvalidParameter, "negative minconf")
+	}
+	// Create map of address and amount pairs.
+	amt, err := dcrutil.NewAmount(cmd.Amount)
+	if err != nil {
+		return nil, rpcError(dcrjson.ErrRPCInvalidParameter, err)
+	}
+	pairs := map[string]dcrutil.Amount{
+		cmd.ToAddress: amt,
+	}
+	changeAccount := account
+	if s.cfg.CSPPServer != "" {
+		mixAccount, err := w.AccountNumber(ctx, s.cfg.MixAccount)
+		if err != nil {
+			return "", err
+		}
+		if account == mixAccount {
+			changeAccount, err = w.AccountNumber(ctx, s.cfg.MixChangeAccount)
+			if err != nil {
+				return "", err
+			}
+		}
+	}
+
+	outputs, err := makeOutputs(pairs, w.ChainParams())
+	if err != nil {
+		return "", err
+	}
+
+	tx, err := w.SendOutputsUnSign(ctx, outputs, account, changeAccount, minConf)
+	if err != nil {
+		if errors.Is(err, errors.Locked) {
+			return "", errWalletUnlockNeeded
+		}
+		if errors.Is(err, errors.InsufficientBalance) {
+			return "", rpcError(dcrjson.ErrRPCWalletInsufficientFunds, err)
+		}
+		return "", err
+	}
+
+	sb := new(strings.Builder)
+	errTx := tx.Serialize(hex.NewEncoder(sb))
+	if errTx != nil {
+		return nil, errTx
+	}
+	return sb.String(), nil
 }
 
 // sendMany handles a sendmany RPC request by creating a new transaction
@@ -3191,7 +3299,9 @@ func (s *Server) signRawTransaction(ctx context.Context, icmd interface{}) (inte
 	}
 
 	tx := wire.NewMsgTx()
-	err := tx.Deserialize(hex.NewDecoder(strings.NewReader(cmd.RawTx)))
+	txStr := strings.NewReader(cmd.RawTx)
+	hexDecoder := hex.NewDecoder(txStr)
+	err := tx.Deserialize(hexDecoder)
 	if err != nil {
 		return nil, rpcError(dcrjson.ErrRPCDeserialization, err)
 	}

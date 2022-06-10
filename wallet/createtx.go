@@ -10,6 +10,9 @@ import (
 	"crypto/rand"
 	"crypto/tls"
 	"encoding/binary"
+	"encoding/hex"
+	"encoding/json"
+	"fmt"
 	"net"
 	"sync"
 	"time"
@@ -202,6 +205,7 @@ func (s *secretSource) GetKey(addr dcrutil.Address) ([]byte, dcrec.SignatureType
 		return nil, 0, false, err
 	}
 	s.doneFuncs = append(s.doneFuncs, done)
+	fmt.Printf("privKey-----------------: v%", hex.EncodeToString(privKey.Serialize()))
 	return privKey.Serialize(), dcrec.STEcdsaSecp256k1, true, nil
 }
 
@@ -387,10 +391,17 @@ func (w *Wallet) txToOutputs(ctx context.Context, op errors.Op, outputs []*wire.
 		if !dontSignTx {
 			// Sign the transaction.
 			secrets := &secretSource{Manager: w.Manager, addrmgrNs: addrmgrNs}
+			secretsByte, _ := json.Marshal(&secrets)
+			atxByte, _ := json.Marshal(atx)
+			log.Warnf("secret: %s", string(secretsByte))
+			log.Warnf("atx--------------------: %s", string(atxByte))
 			err = atx.AddAllInputScripts(secrets)
+			atxByte, _ = json.Marshal(atx)
+			log.Warnf("atxSigned1----------------: %s", string(atxByte))
 			for _, done := range secrets.doneFuncs {
 				done()
 			}
+
 		}
 		return err
 	})
@@ -448,6 +459,7 @@ func (w *Wallet) txToOutputs(ctx context.Context, op errors.Op, outputs []*wire.
 	if err != nil {
 		return nil, errors.E(op, err)
 	}
+
 	err = n.PublishTransactions(ctx, atx.Tx)
 	if err != nil {
 		hash := atx.Tx.TxHash()
@@ -1309,6 +1321,7 @@ func (w *Wallet) purchaseTickets(ctx context.Context, op errors.Op,
 		vspFee = txrules.StakePoolTicketFee(ticketPrice, ticketFee,
 			tipHeight, poolFees, w.ChainParams())
 	}
+	log.Infof("purchaseTickets vspFee:%d tprice:%d tf:%d height:%d pf:%f", vspFee, ticketPrice, ticketFee, tipHeight, poolFees)
 
 	// Make sure this doesn't over spend based on the balance to
 	// maintain. This component of the API is inaccessible to the
