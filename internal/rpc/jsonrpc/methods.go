@@ -2677,6 +2677,7 @@ func (s *Server) redeemMultiSigOut(ctx context.Context, icmd interface{}) (inter
 		return nil, errors.E("P2SH redeem script is not multisig")
 	}
 	var msgTx wire.MsgTx
+	msgTx.Version = 1
 	txIn := wire.NewTxIn(&op, int64(p2shOutput.OutputAmount), nil)
 	msgTx.AddTxIn(txIn)
 
