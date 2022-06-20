@@ -24,13 +24,14 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/decred/dcrd/chaincfg"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrjson"
-	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrd/txscript"
-	"github.com/decred/dcrd/wire"
-	"github.com/decred/dcrwallet/wallet/txauthor"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrjson/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version1/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version2/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
+
+	"dcrn.xyz/dcrnwallet/wallet/txauthor"
 )
 
 // params is the global representing the chain parameters. It is assigned
@@ -157,11 +158,11 @@ func main() {
 
 	switch cfg.Network {
 	case "testnet":
-		params = &chaincfg.TestNet3Params
+		params = chaincfg.TestNet3Params()
 	case "mainnet":
-		params = &chaincfg.MainNetParams
+		params = chaincfg.MainNetParams()
 	case "simnet":
-		params = &chaincfg.SimNetParams
+		params = chaincfg.SimNetParams()
 	default:
 		fmt.Printf("unknown network specified: %s", cfg.Network)
 		return
