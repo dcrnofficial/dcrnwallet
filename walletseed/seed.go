@@ -12,7 +12,7 @@ import (
 
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/pgpwordlist"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 )
 
 // GenerateRandomSeed returns a new seed created from a cryptographically-secure

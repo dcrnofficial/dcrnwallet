@@ -10,7 +10,7 @@ import (
 
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )

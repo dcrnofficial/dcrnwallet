@@ -5,7 +5,7 @@ go 1.13
 require (
 	decred.org/cspp v0.2.0
 	github.com/Decred-Next/dcrnd/addrmgr/v8 v8.0.0
-	github.com/Decred-Next/dcrnd/blockchain/stake/v8 v8.0.6
+	github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8 v8.0.3
 	github.com/Decred-Next/dcrnd/blockchain/standalone/v8 v8.0.0
 	//github.com/decred/dcrd/blockchain/v2 v2.1.0 // indirect
 	github.com/Decred-Next/dcrnd/blockchain/v8 v8.0.0
@@ -14,15 +14,20 @@ require (
 	github.com/Decred-Next/dcrnd/chaincfg/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/connmgr/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8 v8.0.0
+	github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/dcrec/secp256k1/version4/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/dcrec/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/dcrjson/version3/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/dcrutil/version2/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/dcrutil/version3/v8 v8.0.2
+	github.com/Decred-Next/dcrnd/dcrutil/version31/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/gcs/version1/v8 v8.0.6
-	github.com/Decred-Next/dcrnd/hdkeychain/version3/v8 v8.0.0
+	github.com/Decred-Next/dcrnd/hdkeychain/version3/v8 v8.0.6
+	github.com/Decred-Next/dcrnd/hdkeychain/version31/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8 v8.0.6
+	github.com/Decred-Next/dcrnd/txscript/version2/v8 v8.0.6
 	github.com/Decred-Next/dcrnd/txscript/version3/v8 v8.0.2
+	github.com/Decred-Next/dcrnd/txscript/version31/v8 v8.0.2
 	github.com/Decred-Next/dcrnd/wire/v8 v8.0.6
 	github.com/decred/dcrd/txscript/v3 v3.0.0 // indirect
 	github.com/decred/go-socks v1.1.0

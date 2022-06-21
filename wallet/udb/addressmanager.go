@@ -17,9 +17,9 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/internal/snacl"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
-	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	"golang.org/x/crypto/ripemd160"
 )
 

@@ -7,8 +7,8 @@ package txrules
 
 import (
 	"dcrn.xyz/dcrnwallet/errors"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
-	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	 dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 

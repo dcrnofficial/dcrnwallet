@@ -25,13 +25,13 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
 	"decred.org/cspp"
 	"decred.org/cspp/coinjoin"
-	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
-	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 

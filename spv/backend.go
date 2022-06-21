@@ -14,10 +14,10 @@ import (
 	"dcrn.xyz/dcrnwallet/validate"
 	"dcrn.xyz/dcrnwallet/wallet"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
-	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 

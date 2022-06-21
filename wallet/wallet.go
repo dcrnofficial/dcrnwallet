@@ -25,21 +25,21 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/txrules"
 	"dcrn.xyz/dcrnwallet/wallet/udb"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
-	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8"
+	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8/ecdsa"
 
 	secp256k14 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version4/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
 	dcrutil2 "github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
-	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"golang.org/x/sync/errgroup"
 )
@@ -818,7 +818,7 @@ func (w *Wallet) CommittedTickets(ctx context.Context, tickets []*chainhash.Hash
 			// Commitment outputs are at alternating output
 			// indexes, starting at 1.
 			var bestAddr dcrutil.Address
-			var bestAmount dcrutil2.Amount
+			var bestAmount dcrutil.Amount
 
 			for i := 1; i < len(tx.TxOut); i += 2 {
 				scr := tx.TxOut[i].PkScript

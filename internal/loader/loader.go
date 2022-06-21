@@ -15,7 +15,7 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet"
 	_ "dcrn.xyz/dcrnwallet/wallet/drivers/bdb" // driver loaded during init
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 )
 
 const (

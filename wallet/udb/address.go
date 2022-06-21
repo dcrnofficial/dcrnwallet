@@ -8,10 +8,10 @@ package udb
 import (
 	"encoding/hex"
 
-	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8"
+	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 )
 
 // ManagedAddress is an interface that provides acces to information regarding

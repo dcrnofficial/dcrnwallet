@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 

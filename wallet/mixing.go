@@ -18,7 +18,7 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
 	"decred.org/cspp"
 	"decred.org/cspp/coinjoin"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/decred/go-socks/socks"
 	"golang.org/x/sync/errgroup"

@@ -10,7 +10,7 @@ import (
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/wallet/udb"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 )
 
 // UpgradeToSLIP0044CoinType upgrades the wallet from the legacy BIP0044 coin

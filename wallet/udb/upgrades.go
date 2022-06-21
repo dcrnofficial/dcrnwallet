@@ -12,12 +12,12 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/internal/compat"
 	"dcrn.xyz/dcrnwallet/wallet/internal/snacl"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
-	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
-	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 

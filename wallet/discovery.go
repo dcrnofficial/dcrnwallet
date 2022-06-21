@@ -15,10 +15,10 @@ import (
 	"dcrn.xyz/dcrnwallet/validate"
 	"dcrn.xyz/dcrnwallet/wallet/udb"
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
-	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
-	hd "github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	hd "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"golang.org/x/sync/errgroup"
 )

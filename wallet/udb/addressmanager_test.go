@@ -20,7 +20,7 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/walletdb"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
-	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 )
 
 // testContext is used to store context information about a running test which
