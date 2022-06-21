@@ -11,13 +11,13 @@ import (
 	"testing"
 	"time"
 
-	_ "decred.org/dcrwallet/wallet/drivers/bdb"
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/gcs"
-	"github.com/decred/dcrd/gcs/blockcf"
-	"github.com/decred/dcrd/wire"
+	_ "dcrn.xyz/dcrnwallet/wallet/drivers/bdb"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 func tempDB(t *testing.T) (db walletdb.DB, teardown func()) {

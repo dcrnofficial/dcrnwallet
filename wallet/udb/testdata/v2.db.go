@@ -16,9 +16,9 @@ import (
 	"io"
 	"os"
 
+	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/decred/dcrd/blockchain/stake"
 	"github.com/decred/dcrd/chaincfg"
-	"github.com/decred/dcrd/wire"
 	"github.com/decred/dcrutil"
 	"github.com/decred/dcrutil/hdkeychain"
 	_ "github.com/decred/dcrwallet/wallet/internal/bdb"

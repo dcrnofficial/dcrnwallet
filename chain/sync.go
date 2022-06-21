@@ -14,11 +14,11 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/rpc/client/dcrd"
-	"decred.org/dcrwallet/wallet"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	"dcrn.xyz/dcrnwallet/wallet"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/jrick/wsrpc/v2"
 	"golang.org/x/sync/errgroup"
 )

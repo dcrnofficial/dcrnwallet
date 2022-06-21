@@ -4,7 +4,7 @@
 
 package deployments
 
-import "github.com/decred/dcrd/wire"
+import "github.com/Decred-Next/dcrnd/wire/v8"
 
 // HardcodedDeployment specifies hardcoded block heights that a deployment
 // activates at.  If the value is negative, the deployment is either inactive or

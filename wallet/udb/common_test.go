@@ -12,8 +12,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/chaincfg/v3"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 )
 
 var (

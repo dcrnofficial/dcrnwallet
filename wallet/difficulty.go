@@ -13,14 +13,14 @@ import (
 	"math/big"
 	"time"
 
-	"decred.org/dcrwallet/deployments"
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/wallet/walletdb"
-	blockchain "github.com/decred/dcrd/blockchain/standalone"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/deployments"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 var (

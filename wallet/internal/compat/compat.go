@@ -1,9 +1,9 @@
 package compat
 
 import (
-	"github.com/decred/dcrd/dcrec"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/hdkeychain/v3"
+	"github.com/Decred-Next/dcrnd/dcrec/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
 )
 
 func HD2Address(k *hdkeychain.ExtendedKey, params dcrutil.AddressParams) (*dcrutil.AddressPubKeyHash, error) {

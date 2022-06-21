@@ -6,10 +6,10 @@
 package spv
 
 import (
-	"github.com/decred/dcrd/blockchain/stake/v3"
-	"github.com/decred/dcrd/gcs/blockcf"
-	"github.com/decred/dcrd/txscript/v3"
-	"github.com/decred/dcrd/wire"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
+	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // rescanCheckTransaction is a helper function to rescan both stake and regular

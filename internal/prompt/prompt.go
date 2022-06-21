@@ -14,9 +14,9 @@ import (
 	"strings"
 	"unicode"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/walletseed"
-	"github.com/decred/dcrd/hdkeychain/v3"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/walletseed"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

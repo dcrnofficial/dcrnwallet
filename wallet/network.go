@@ -7,11 +7,11 @@ package wallet
 import (
 	"context"
 
-	"decred.org/dcrwallet/errors"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/gcs"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // Peer provides wallets with a subset of Decred network functionality available

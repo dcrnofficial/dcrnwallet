@@ -10,17 +10,17 @@ import (
 	"math/big"
 	"time"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/wallet/txrules"
-	"decred.org/dcrwallet/wallet/udb"
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/blockchain/stake/v3"
-	blockchain "github.com/decred/dcrd/blockchain/standalone"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/gcs"
-	"github.com/decred/dcrd/txscript/v3"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/wallet/txrules"
+	"dcrn.xyz/dcrnwallet/wallet/udb"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
+	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 func (w *Wallet) extendMainChain(ctx context.Context, op errors.Op, dbtx walletdb.ReadWriteTx,

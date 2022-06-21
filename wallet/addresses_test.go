@@ -13,9 +13,9 @@ import (
 	"strings"
 	"testing"
 
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrutil/v3"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
 )
 
 // expectedAddr is used to house the expected return values from a managed

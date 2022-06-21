@@ -20,12 +20,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/internal/loader"
-	"decred.org/dcrwallet/rpc/jsonrpc/types"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrjson/v3"
-	dcrdtypes "github.com/decred/dcrd/rpc/jsonrpc/types"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/internal/loader"
+	"dcrn.xyz/dcrnwallet/rpc/jsonrpc/types"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
+	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
 	"github.com/gorilla/websocket"
 )
 

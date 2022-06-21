@@ -10,7 +10,7 @@ import (
 	mathrand "math/rand"
 	"sync"
 
-	"decred.org/dcrwallet/wallet/txauthor"
+	"dcrn.xyz/dcrnwallet/wallet/txauthor"
 )
 
 var shuffleRand *mathrand.Rand

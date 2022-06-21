@@ -10,10 +10,10 @@ import (
 	"os"
 	"testing"
 
-	_ "decred.org/dcrwallet/wallet/drivers/bdb"
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrutil/v3"
+	_ "dcrn.xyz/dcrnwallet/wallet/drivers/bdb"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
 )
 
 var basicWalletConfig = Config{

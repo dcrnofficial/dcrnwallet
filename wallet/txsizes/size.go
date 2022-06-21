@@ -5,7 +5,7 @@
 
 package txsizes
 
-import "github.com/decred/dcrd/wire"
+import "github.com/Decred-Next/dcrnd/wire/v8"
 
 // Worst case script and input/output size estimates.
 const (

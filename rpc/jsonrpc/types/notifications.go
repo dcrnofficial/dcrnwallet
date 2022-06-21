@@ -8,7 +8,7 @@
 
 package types
 
-import "github.com/decred/dcrd/dcrjson/v3"
+import "github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
 
 const (
 	// AccountBalanceNtfnMethod is the method used for account balance

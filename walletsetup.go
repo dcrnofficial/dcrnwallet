@@ -14,17 +14,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/internal/loader"
-	"decred.org/dcrwallet/internal/prompt"
-	"decred.org/dcrwallet/wallet"
-	_ "decred.org/dcrwallet/wallet/drivers/bdb"
-	"decred.org/dcrwallet/walletseed"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrec"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/hdkeychain/v3"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/internal/loader"
+	"dcrn.xyz/dcrnwallet/internal/prompt"
+	"dcrn.xyz/dcrnwallet/wallet"
+	_ "dcrn.xyz/dcrnwallet/wallet/drivers/bdb"
+	"dcrn.xyz/dcrnwallet/walletseed"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrec/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // networkDir returns the directory name of a network directory to hold wallet

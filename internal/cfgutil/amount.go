@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/decred/dcrd/dcrutil/v3"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
 )
 
 // AmountFlag embeds a dcrutil.Amount and implements the flags.Marshaler and

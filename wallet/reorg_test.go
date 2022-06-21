@@ -9,11 +9,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/decred/dcrd/blockchain/v3/chaingen"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/gcs/blockcf"
-	"github.com/decred/dcrd/wire"
+	"github.com/Decred-Next/dcrnd/blockchain/v8/chaingen"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 type tg struct {

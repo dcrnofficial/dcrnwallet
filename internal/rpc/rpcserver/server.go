@@ -30,30 +30,30 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"decred.org/dcrwallet/chain"
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/internal/cfgutil"
-	"decred.org/dcrwallet/internal/loader"
-	"decred.org/dcrwallet/internal/netparams"
-	"decred.org/dcrwallet/p2p"
-	"decred.org/dcrwallet/rpc/client/dcrd"
-	pb "decred.org/dcrwallet/rpc/walletrpc"
-	"decred.org/dcrwallet/spv"
-	"decred.org/dcrwallet/ticketbuyer"
-	"decred.org/dcrwallet/wallet"
-	"decred.org/dcrwallet/wallet/txauthor"
-	"decred.org/dcrwallet/wallet/txrules"
-	"decred.org/dcrwallet/wallet/udb"
-	"decred.org/dcrwallet/walletseed"
-	"github.com/decred/dcrd/addrmgr"
-	"github.com/decred/dcrd/blockchain/stake/v3"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/chaincfg/v3"
-	"github.com/decred/dcrd/dcrec"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/hdkeychain/v3"
-	"github.com/decred/dcrd/txscript/v3"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/chain"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/internal/cfgutil"
+	"dcrn.xyz/dcrnwallet/internal/loader"
+	"dcrn.xyz/dcrnwallet/internal/netparams"
+	"dcrn.xyz/dcrnwallet/p2p"
+	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	pb "dcrn.xyz/dcrnwallet/rpc/walletrpc"
+	"dcrn.xyz/dcrnwallet/spv"
+	"dcrn.xyz/dcrnwallet/ticketbuyer"
+	"dcrn.xyz/dcrnwallet/wallet"
+	"dcrn.xyz/dcrnwallet/wallet/txauthor"
+	"dcrn.xyz/dcrnwallet/wallet/txrules"
+	"dcrn.xyz/dcrnwallet/wallet/udb"
+	"dcrn.xyz/dcrnwallet/walletseed"
+	"github.com/Decred-Next/dcrnd/addrmgr/v8"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	"github.com/Decred-Next/dcrnd/dcrec/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	"github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // Public API version constants
@@ -566,7 +566,7 @@ func (s *walletServer) ImportScript(ctx context.Context,
 	// TODO: Rather than assuming the "default" version, it must be a parameter
 	// to the request.
 	sc, addrs, requiredSigs, err := txscript.ExtractPkScriptAddrs(
-		0, req.Script, s.wallet.ChainParams())
+		0, req.Script, s.wallet.ChainParams(), false)
 	if err != nil && req.RequireRedeemable {
 		return nil, status.Errorf(codes.FailedPrecondition,
 			"The script is not redeemable by the wallet")
@@ -1901,7 +1901,7 @@ func (s *walletServer) ValidateAddress(ctx context.Context, req *pb.ValidateAddr
 		// further information available, so just set the script type
 		// a non-standard and break out now.
 		class, addrs, reqSigs, err := txscript.ExtractPkScriptAddrs(
-			0, script, s.wallet.ChainParams())
+			0, script, s.wallet.ChainParams(), false)
 		if err != nil {
 			result.ScriptType = pb.ValidateAddressResponse_NonStandardTy
 			break
@@ -3015,7 +3015,7 @@ func marshalDecodedTxOutputs(mtx *wire.MsgTx, chainParams *chaincfg.Params) []*p
 			// couldn't parse and there is no additional information
 			// about it anyways.
 			scriptClass, addrs, reqSigs, _ = txscript.ExtractPkScriptAddrs(
-				v.Version, v.PkScript, chainParams)
+				v.Version, v.PkScript, chainParams, false)
 			encodedAddrs = make([]string, len(addrs))
 			for j, addr := range addrs {
 				encodedAddrs[j] = addr.Address()

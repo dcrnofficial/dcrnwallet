@@ -10,17 +10,17 @@ import (
 	"context"
 	"sync"
 
-	"decred.org/dcrwallet/errors"
-	"decred.org/dcrwallet/rpc/client/dcrd"
-	"decred.org/dcrwallet/wallet/udb"
-	"decred.org/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrd/blockchain/stake/v3"
-	blockchain "github.com/decred/dcrd/blockchain/standalone"
-	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/hdkeychain/v3"
-	"github.com/decred/dcrd/txscript/v3"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	"dcrn.xyz/dcrnwallet/wallet/udb"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnd/blockchain/stake/v8"
+	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
+	txscript "github.com/Decred-Next/dcrnd/txscript/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // TODO: It would be good to send errors during notification creation to the rpc
@@ -72,7 +72,7 @@ func lookupInputAccount(dbtx walletdb.ReadTx, w *Wallet, details *udb.TxDetails,
 		return 0
 	}
 	prevOut := prev.MsgTx.TxOut[prevOP.Index]
-	_, addrs, _, err := txscript.ExtractPkScriptAddrs(prevOut.Version, prevOut.PkScript, w.chainParams)
+	_, addrs, _, err := txscript.ExtractPkScriptAddrs(prevOut.Version, prevOut.PkScript, w.chainParams, false)
 	var inputAcct uint32
 	if err == nil && len(addrs) > 0 {
 		inputAcct, err = w.Manager.AddrAccount(addrmgrNs, addrs[0])
@@ -91,7 +91,7 @@ func lookupOutputChain(dbtx walletdb.ReadTx, w *Wallet, details *udb.TxDetails,
 	addrmgrNs := dbtx.ReadBucket(waddrmgrNamespaceKey)
 
 	output := details.MsgTx.TxOut[cred.Index]
-	_, addrs, _, err := txscript.ExtractPkScriptAddrs(output.Version, output.PkScript, w.chainParams)
+	_, addrs, _, err := txscript.ExtractPkScriptAddrs(output.Version, output.PkScript, w.chainParams, false)
 	var ma udb.ManagedAddress
 	if err == nil && len(addrs) > 0 {
 		ma, err = w.Manager.Address(addrmgrNs, addrs[0])
@@ -237,7 +237,7 @@ func totalBalances(dbtx walletdb.ReadTx, w *Wallet, m map[uint32]dcrutil.Amount)
 		output := unspent[i]
 		var outputAcct uint32
 		_, addrs, _, err := txscript.ExtractPkScriptAddrs(
-			0, output.PkScript, w.chainParams)
+			0, output.PkScript, w.chainParams, false)
 		if err == nil && len(addrs) > 0 {
 			outputAcct, err = w.Manager.AddrAccount(addrmgrNs, addrs[0])
 		}

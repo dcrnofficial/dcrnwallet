@@ -12,7 +12,7 @@ import (
 	"io"
 	"runtime/debug"
 
-	"decred.org/dcrwallet/errors"
+	"dcrn.xyz/dcrnwallet/errors"
 	"golang.org/x/crypto/nacl/secretbox"
 	"golang.org/x/crypto/scrypt"
 )

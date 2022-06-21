@@ -3,7 +3,8 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-//+build ignore
+//go:build ignore
+// +build ignore
 
 package udb
 
@@ -14,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/decred/dcrd/chaincfg/v3/chainhash"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/wire"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8/chainhash"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 type queryState struct {

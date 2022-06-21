@@ -4,7 +4,8 @@
 // license that can be found in the LICENSE file.
 
 // Test must be updated for API changes.
-//+build disabled
+//go:build disabled
+// +build disabled
 
 package walletdb_test
 
@@ -14,9 +15,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"decred.org/dcrwallet/errors"
-	_ "decred.org/dcrwallet/wallet/internal/bdb"
-	"decred.org/dcrwallet/wallet/walletdb"
+	"dcrn.xyz/dcrnwallet/errors"
+	_ "dcrn.xyz/dcrnwallet/wallet/internal/bdb"
+	"dcrn.xyz/dcrnwallet/wallet/walletdb"
 )
 
 // This example demonstrates creating a new database.

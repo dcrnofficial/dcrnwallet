@@ -2,15 +2,16 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-//+build go1.13
+//go:build go1.13
+// +build go1.13
 
 package cfgutil
 
 import (
 	"time"
 
-	"decred.org/dcrwallet/errors"
-	"github.com/decred/dcrd/certgen"
+	"dcrn.xyz/dcrnwallet/errors"
+	"github.com/Decred-Next/dcrnd/certgen/v8"
 )
 
 const (

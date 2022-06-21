@@ -8,10 +8,10 @@ package udb
 import (
 	"encoding/hex"
 
-	"github.com/decred/dcrd/dcrec"
-	"github.com/decred/dcrd/dcrec/secp256k1/v3"
-	"github.com/decred/dcrd/dcrutil/v3"
-	"github.com/decred/dcrd/hdkeychain/v3"
+	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8"
+	"github.com/Decred-Next/dcrnd/dcrec/v8"
+	"github.com/Decred-Next/dcrnd/dcrutil/version3/v8"
+	"github.com/Decred-Next/dcrnd/hdkeychain/version3/v8"
 )
 
 // ManagedAddress is an interface that provides acces to information regarding
@@ -205,7 +205,7 @@ func newManagedAddressWithoutPrivKey(m *Manager, account uint32, pubKey *secp256
 // private and public keys if the provided extended key is private, otherwise it
 // will only have access to the public key.
 func newManagedAddressFromExtKey(m *Manager, account uint32, key *hdkeychain.ExtendedKey) (*managedAddress, error) {
-	pubKey, err := key.ECPubKey()
+	pubKey, err := secp256k1.ParsePubKey(key.SerializedPubKey())
 	if err != nil {
 		return nil, err
 	}

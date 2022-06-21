@@ -10,11 +10,11 @@ package validate
 import (
 	"bytes"
 
-	"decred.org/dcrwallet/errors"
-	blockchain "github.com/decred/dcrd/blockchain/standalone"
-	"github.com/decred/dcrd/gcs"
-	"github.com/decred/dcrd/gcs/blockcf"
-	"github.com/decred/dcrd/wire"
+	"dcrn.xyz/dcrnwallet/errors"
+	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
+	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
+	"github.com/Decred-Next/dcrnd/wire/v8"
 )
 
 // MerkleRoots recreates the merkle roots of regular and stake transactions from

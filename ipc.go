@@ -12,7 +12,7 @@ import (
 	"io"
 	"os"
 
-	"decred.org/dcrwallet/errors"
+	"dcrn.xyz/dcrnwallet/errors"
 )
 
 // Messages sent over a pipe are encoded using a simple binary message format:

@@ -12,8 +12,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/decred/dcrd/dcrjson/v3"
-	dcrdtypes "github.com/decred/dcrd/rpc/jsonrpc/types"
+	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
+	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
 )
 
 // TestWalletSvrCmds tests all of the wallet server commands marshal and
