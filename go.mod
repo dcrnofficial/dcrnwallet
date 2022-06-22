@@ -7,7 +7,7 @@ require (
 	github.com/Decred-Next/dcrnd/addrmgr/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8 v8.0.3
 	github.com/Decred-Next/dcrnd/blockchain/standalone/v8 v8.0.0
-	//github.com/decred/dcrd/blockchain/v2 v2.1.0 // indirect
+	//github.com/Decred-Next/dcrnd/blockchain/v8 v2.1.0 // indirect
 	github.com/Decred-Next/dcrnd/blockchain/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/certgen/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8 v8.0.6

@@ -12,8 +12,8 @@ import (
 	"sync"
 
 	"dcrn.xyz/dcrnwallet/errors"
-	"dcrn.xyz/dcrnwallet/wallet"
-	_ "dcrn.xyz/dcrnwallet/wallet/drivers/bdb" // driver loaded during init
+	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
+	_ "dcrn.xyz/dcrnwallet/wallet/version8/drivers/bdb" // driver loaded during init
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 )

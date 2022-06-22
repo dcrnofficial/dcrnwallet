@@ -31,7 +31,7 @@ import (
 	txscript "github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 
-	"dcrn.xyz/dcrnwallet/wallet/txauthor"
+	"dcrn.xyz/dcrnwallet/wallet/version8/txauthor"
 )
 
 // params is the global representing the chain parameters. It is assigned
