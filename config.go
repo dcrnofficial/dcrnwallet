@@ -27,8 +27,8 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
 	"github.com/Decred-Next/dcrnd/connmgr/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
-	"github.com/decred/go-socks/socks"
-	"github.com/decred/slog"
+	"github.com/Decred-Next/go-socks/v8/socks"
+	"github.com/Decred-Next/slog/v8"
 	flags "github.com/jessevdk/go-flags"
 )
 

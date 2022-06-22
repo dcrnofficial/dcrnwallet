@@ -4,7 +4,7 @@
 
 package spv
 
-import "github.com/decred/slog"
+import "github.com/Decred-Next/slog/v8"
 
 var log = slog.Disabled
 

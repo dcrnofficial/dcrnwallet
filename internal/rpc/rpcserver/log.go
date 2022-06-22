@@ -19,7 +19,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/decred/slog"
+	"github.com/Decred-Next/slog/v8"
 	"google.golang.org/grpc/grpclog"
 )
 
