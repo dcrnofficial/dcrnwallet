@@ -20,7 +20,7 @@ import (
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
 	"github.com/Decred-Next/dcrnd/connmgr/v8"
-	"github.com/decred/slog"
+	"github.com/Decred-Next/slog/v8"
 	"github.com/jrick/logrotate/rotator"
 )
 

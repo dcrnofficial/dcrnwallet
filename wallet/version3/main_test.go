@@ -9,7 +9,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/decred/slog"
+	"github.com/Decred-Next/slog/v8"
 )
 
 var logFlag = flag.Bool("log", false, "enable package logger")

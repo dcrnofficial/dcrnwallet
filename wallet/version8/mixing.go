@@ -16,11 +16,11 @@ import (
 	"dcrn.xyz/dcrnwallet/wallet/version8/txsizes"
 	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
-	"decred.org/cspp"
-	"decred.org/cspp/coinjoin"
+	"github.com/Decred-Next/cspp/v8"
+	"github.com/Decred-Next/cspp/v8/coinjoin"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/decred/go-socks/socks"
+	"github.com/Decred-Next/go-socks/v8/socks"
 	"golang.org/x/sync/errgroup"
 )
 

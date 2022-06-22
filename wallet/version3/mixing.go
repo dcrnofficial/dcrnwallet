@@ -20,7 +20,7 @@ import (
 	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txsizes"
 	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
 	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
-	"github.com/decred/go-socks/socks"
+	"github.com/Decred-Next/go-socks/v8/socks"
 	"golang.org/x/sync/errgroup"
 )
 
