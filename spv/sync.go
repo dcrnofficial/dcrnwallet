@@ -17,7 +17,7 @@ import (
 	"dcrn.xyz/dcrnwallet/lru"
 	"dcrn.xyz/dcrnwallet/p2p"
 	"dcrn.xyz/dcrnwallet/validate"
-	"dcrn.xyz/dcrnwallet/wallet"
+	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"

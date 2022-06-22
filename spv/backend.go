@@ -12,7 +12,7 @@ import (
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/p2p"
 	"dcrn.xyz/dcrnwallet/validate"
-	"dcrn.xyz/dcrnwallet/wallet"
+	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"

@@ -16,7 +16,7 @@ import (
 
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
-	"dcrn.xyz/dcrnwallet/wallet"
+	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/jrick/wsrpc/v2"

@@ -28,7 +28,7 @@ import (
 	"dcrn.xyz/dcrnwallet/spv"
 	"dcrn.xyz/dcrnwallet/ticketbuyer"
 	"dcrn.xyz/dcrnwallet/version"
-	"dcrn.xyz/dcrnwallet/wallet"
+	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )
