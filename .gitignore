@@ -7,3 +7,4 @@ vendor
 .idea
 go.sum
 rpc/tools/bin/
+dcrnwallet.exe

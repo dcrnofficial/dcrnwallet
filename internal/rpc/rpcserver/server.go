@@ -566,7 +566,7 @@ func (s *walletServer) ImportScript(ctx context.Context,
 	// TODO: Rather than assuming the "default" version, it must be a parameter
 	// to the request.
 	sc, addrs, requiredSigs, err := txscript.ExtractPkScriptAddrs(
-		0, req.Script, s.wallet.ChainParams(), false)
+		0, req.Script, s.wallet.ChainParams())
 	if err != nil && req.RequireRedeemable {
 		return nil, status.Errorf(codes.FailedPrecondition,
 			"The script is not redeemable by the wallet")
@@ -1901,7 +1901,7 @@ func (s *walletServer) ValidateAddress(ctx context.Context, req *pb.ValidateAddr
 		// further information available, so just set the script type
 		// a non-standard and break out now.
 		class, addrs, reqSigs, err := txscript.ExtractPkScriptAddrs(
-			0, script, s.wallet.ChainParams(), false)
+			0, script, s.wallet.ChainParams())
 		if err != nil {
 			result.ScriptType = pb.ValidateAddressResponse_NonStandardTy
 			break
@@ -3015,7 +3015,7 @@ func marshalDecodedTxOutputs(mtx *wire.MsgTx, chainParams *chaincfg.Params) []*p
 			// couldn't parse and there is no additional information
 			// about it anyways.
 			scriptClass, addrs, reqSigs, _ = txscript.ExtractPkScriptAddrs(
-				v.Version, v.PkScript, chainParams, false)
+				v.Version, v.PkScript, chainParams)
 			encodedAddrs = make([]string, len(addrs))
 			for j, addr := range addrs {
 				encodedAddrs[j] = addr.Address()

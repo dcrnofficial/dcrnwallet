@@ -32,9 +32,7 @@ import (
 	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8/ecdsa"
 
-	secp256k14 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version4/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
-	dcrutil2 "github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
@@ -1653,7 +1651,7 @@ func (w *Wallet) SignMessage(ctx context.Context, msg string, addr dcrutil.Addre
 	if err != nil {
 		return nil, errors.E(op, err)
 	}
-	sig = ecdsa.SignCompact(privKey, messageHash, true)
+	sig,err = secp256k1.SignCompact(privKey, messageHash, true)
 	if err != nil {
 		return nil, errors.E(op, err)
 	}
@@ -2102,7 +2100,7 @@ outputs:
 		var address string
 		var accountName string
 		_, addrs, _, _ := txscript.ExtractPkScriptAddrs(output.Version,
-			output.PkScript, net, false)
+			output.PkScript, net)
 		if len(addrs) == 1 {
 			addr := addrs[0]
 			address = addr.Address()
@@ -2274,7 +2272,7 @@ func (w *Wallet) ListAddressTransactions(ctx context.Context, pkHashes map[strin
 				for _, cred := range detail.Credits {
 					pkScript := detail.MsgTx.TxOut[cred.Index].PkScript
 					_, addrs, _, err := txscript.ExtractPkScriptAddrs(
-						0, pkScript, w.chainParams, false)
+						0, pkScript, w.chainParams)
 					if err != nil || len(addrs) != 1 {
 						continue
 					}
@@ -3009,7 +3007,7 @@ func (w *Wallet) Accounts(ctx context.Context) (*AccountsResult, error) {
 			output := unspent[i]
 			var outputAcct uint32
 			_, addrs, _, err := txscript.ExtractPkScriptAddrs(
-				0, output.PkScript, w.chainParams, false)
+				0, output.PkScript, w.chainParams)
 			if err == nil && len(addrs) > 0 {
 				outputAcct, err = w.Manager.AddrAccount(addrmgrNs, addrs[0])
 			}
@@ -3159,7 +3157,7 @@ func (w *Wallet) ListUnspent(ctx context.Context, minconf, maxconf int32, addres
 			// grouped under the associated account in the db.
 			acctName := defaultAccountName
 			sc, addrs, _, err := txscript.ExtractPkScriptAddrs(
-				0, output.PkScript, w.chainParams, false)
+				0, output.PkScript, w.chainParams)
 			if err != nil {
 				continue
 			}
@@ -3482,7 +3480,7 @@ func isRevocation(tx *wire.MsgTx) bool {
 func (w *Wallet) hasVotingAuthority(addrmgrNs walletdb.ReadBucket, ticketPurchase *wire.MsgTx) (bool, error) {
 	out := ticketPurchase.TxOut[0]
 	_, addrs, _, err := txscript.ExtractPkScriptAddrs(out.Version,
-		out.PkScript, w.chainParams, false)
+		out.PkScript, w.chainParams)
 	if err != nil {
 		return false, err
 	}
@@ -3937,7 +3935,7 @@ func (w *Wallet) TotalReceivedForAccounts(ctx context.Context, minConf int32) ([
 					pkScript := detail.MsgTx.TxOut[cred.Index].PkScript
 					var outputAcct uint32
 					_, addrs, _, err := txscript.ExtractPkScriptAddrs(pkVersion,
-						pkScript, w.chainParams, false)
+						pkScript, w.chainParams)
 					if err == nil && len(addrs) > 0 {
 						outputAcct, err = w.Manager.AddrAccount(
 							addrmgrNs, addrs[0])
@@ -3992,7 +3990,7 @@ func (w *Wallet) TotalReceivedForAddr(ctx context.Context, addr dcrutil.Address,
 					pkVersion := detail.MsgTx.TxOut[cred.Index].Version
 					pkScript := detail.MsgTx.TxOut[cred.Index].PkScript
 					_, addrs, _, err := txscript.ExtractPkScriptAddrs(pkVersion,
-						pkScript, w.chainParams, false)
+						pkScript, w.chainParams)
 					// An error creating addresses from the output script only
 					// indicates a non-standard script, so ignore this credit.
 					if err != nil {
@@ -4189,7 +4187,7 @@ func (w *Wallet) SignTransaction(ctx context.Context, tx *wire.MsgTx, hashType t
 				txscript.SigHashSingle || i < len(tx.TxOut) {
 
 				script, err := txscript.SignTxOutput(w.ChainParams(),
-					tx, i, prevOutScript, hashType, source, source, txIn.SignatureScript, false)
+					tx, i, prevOutScript, hashType, source, source, txIn.SignatureScript)
 				// Failure to sign isn't an error, it just means that
 				// the tx isn't complete.
 				if err != nil {
@@ -4214,13 +4212,13 @@ func (w *Wallet) SignTransaction(ctx context.Context, tx *wire.MsgTx, hashType t
 				class, addr, _, _ := txscript.ExtractPkScriptAddrs(
 					0,
 					additionalPrevScripts[txIn.PreviousOutPoint],
-					w.ChainParams(), false)
+					w.ChainParams())
 
 				if txscript.IsErrorCode(err, txscript.ErrInvalidStackOperation) &&
 					class == txscript.ScriptHashTy {
 					redeemScript, _ := source.script(addr[0])
 					redeemClass := txscript.GetScriptClass(
-						0, redeemScript, false)
+						0, redeemScript)
 					if redeemClass == txscript.MultiSigTy {
 						multisigNotEnoughSigs = true
 					}
@@ -4303,7 +4301,7 @@ func (w *Wallet) isRelevantTx(dbtx walletdb.ReadTx, tx *wire.MsgTx) bool {
 	}
 	for _, out := range tx.TxOut {
 		_, addrs, _, err := txscript.ExtractPkScriptAddrs(out.Version,
-			out.PkScript, w.chainParams, false)
+			out.PkScript, w.chainParams)
 		if err != nil {
 			continue
 		}
@@ -4346,7 +4344,7 @@ func (w *Wallet) appendRelevantOutpoints(relevant []wire.OutPoint, dbtx walletdb
 		}
 
 		class, addrs, _, err := txscript.ExtractPkScriptAddrs(out.Version,
-			out.PkScript, w.chainParams, false)
+			out.PkScript, w.chainParams)
 		if err != nil {
 			continue
 		}
