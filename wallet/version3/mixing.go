@@ -10,8 +10,8 @@ import (
 	"crypto/tls"
 	"net"
 
-	"decred.org/cspp"
-	"decred.org/cspp/coinjoin"
+	"github.com/Decred-Next/cspp/v8"
+	"github.com/Decred-Next/cspp/v8/coinjoin"
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/decred/dcrwallet/errors/v2"

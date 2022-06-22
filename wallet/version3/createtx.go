@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"decred.org/cspp"
-	"decred.org/cspp/coinjoin"
+	"github.com/Decred-Next/cspp/v8"
+	"github.com/Decred-Next/cspp/v8/coinjoin"
 	stake "github.com/Decred-Next/dcrnd/blockchain/stake/version2/v8"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"

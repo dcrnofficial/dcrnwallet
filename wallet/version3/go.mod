@@ -3,7 +3,7 @@ module github.com/Decred-Next/dcrnwallet/wallet/version3/v8
 go 1.12
 
 require (
-	decred.org/cspp v0.2.0
+	github.com/Decred-Next/cspp/v8 v8.0.0
 	github.com/Decred-Next/dcrnd/blockchain/stake/version2/v8 v8.0.8
 	github.com/Decred-Next/dcrnd/blockchain/standalone/v8 v8.0.8
 	github.com/Decred-Next/dcrnd/blockchain/v8 v8.0.8
@@ -26,6 +26,6 @@ require (
 	github.com/decred/go-socks v1.1.0
 	github.com/decred/slog v1.0.0
 	go.etcd.io/bbolt v1.3.3
-	golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
-	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
