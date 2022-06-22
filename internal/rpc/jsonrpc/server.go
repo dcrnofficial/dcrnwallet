@@ -22,7 +22,7 @@ import (
 
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/internal/loader"
-	"dcrn.xyz/dcrnwallet/rpc/jsonrpc/types"
+	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"

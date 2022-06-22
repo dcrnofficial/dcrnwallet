@@ -22,7 +22,7 @@ import (
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/p2p"
 	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
-	"dcrn.xyz/dcrnwallet/rpc/jsonrpc/types"
+	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"dcrn.xyz/dcrnwallet/version"
 	"dcrn.xyz/dcrnwallet/wallet"
 	"dcrn.xyz/dcrnwallet/wallet/txrules"

@@ -20,7 +20,7 @@ import (
 	"dcrn.xyz/dcrnwallet/deployments"
 	"dcrn.xyz/dcrnwallet/errors"
 	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
-	"dcrn.xyz/dcrnwallet/rpc/jsonrpc/types"
+	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"dcrn.xyz/dcrnwallet/wallet/internal/compat"
 	"dcrn.xyz/dcrnwallet/wallet/txrules"
 	"dcrn.xyz/dcrnwallet/wallet/udb"

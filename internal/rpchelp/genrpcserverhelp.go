@@ -14,7 +14,7 @@ import (
 	"strings"
 
 	"dcrn.xyz/dcrnwallet/internal/rpchelp"
-	"dcrn.xyz/dcrnwallet/rpc/jsonrpc/types"
+	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
 )
 
