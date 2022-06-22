@@ -52,10 +52,10 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/decred/dcrd/txscript"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/decred/dcrwallet/errors/v2"
-	_ "github.com/decred/dcrwallet/wallet/internal/bdb"
-	"github.com/decred/dcrwallet/wallet/udb"
-	"github.com/decred/dcrwallet/wallet/walletdb"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 const dbname = "v11.db"

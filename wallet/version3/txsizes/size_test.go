@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	. "github.com/decred/dcrwallet/wallet/v3/txsizes"
+	. "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txsizes"
 )
 
 const (

@@ -10,7 +10,7 @@ package validate
 import (
 	"bytes"
 
-	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version2/v8"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"

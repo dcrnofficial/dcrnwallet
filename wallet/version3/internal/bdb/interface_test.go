@@ -22,8 +22,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/decred/dcrwallet/errors/v2"
-	"github.com/decred/dcrwallet/wallet/v3/walletdb"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 // errSubTestFail is used to signal that a sub test returned false.

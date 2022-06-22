@@ -14,10 +14,10 @@ import (
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
 	"github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/decred/dcrwallet/errors/v2"
-	"github.com/decred/dcrwallet/rpc/client/dcrd"
-	"github.com/decred/dcrwallet/wallet/v3/udb"
-	"github.com/decred/dcrwallet/wallet/v3/walletdb"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	"github.com/Decred-Next/dcrnwallet/rpc/client/dcrd/version1/v8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 	"golang.org/x/sync/errgroup"
 )
 

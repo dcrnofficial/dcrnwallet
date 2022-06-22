@@ -9,7 +9,7 @@ import (
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/decred/dcrwallet/errors/v2"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
 )
 
 // DefaultRelayFeePerKb is the default minimum relay fee policy for a mempool.

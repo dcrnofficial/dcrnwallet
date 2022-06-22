@@ -8,8 +8,8 @@ import (
 	"context"
 	
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
-	"github.com/decred/dcrwallet/errors/v2"
-	"github.com/decred/dcrwallet/wallet/v3/walletdb"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 // Initialize prepares an empty database for usage by initializing all buckets

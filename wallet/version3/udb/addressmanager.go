@@ -16,10 +16,10 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/v8/chainec"
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/hdkeychain/version2/v8"
-	"github.com/decred/dcrwallet/errors/v2"
-	"github.com/decred/dcrwallet/wallet/v3/internal/compat"
-	"github.com/decred/dcrwallet/wallet/v3/internal/snacl"
-	"github.com/decred/dcrwallet/wallet/v3/walletdb"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/compat"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/snacl"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 	"golang.org/x/crypto/ripemd160"
 )
 

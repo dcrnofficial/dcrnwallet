@@ -24,10 +24,10 @@ import (
 	"github.com/decred/dcrd/hdkeychain"
 	"github.com/decred/dcrd/txscript"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	_ "github.com/decred/dcrwallet/wallet/internal/bdb"
-	"github.com/decred/dcrwallet/wallet/udb"
-	"github.com/decred/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrwallet/walletseed"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8seed"
 )
 
 const dbname = "v7.db"

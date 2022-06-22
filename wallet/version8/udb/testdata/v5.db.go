@@ -29,12 +29,12 @@ import (
 	"github.com/decred/dcrd/txscript"
 	"github.com/decred/dcrutil"
 	"github.com/decred/dcrutil/hdkeychain"
-	_ "github.com/decred/dcrwallet/wallet/internal/bdb"
-	"github.com/decred/dcrwallet/wallet/internal/txsizes"
-	"github.com/decred/dcrwallet/wallet/txrules"
-	"github.com/decred/dcrwallet/wallet/udb"
-	"github.com/decred/dcrwallet/wallet/walletdb"
-	"github.com/decred/dcrwallet/walletseed"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/txsizes"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txrules"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8seed"
 )
 
 const dbname = "v5.db"

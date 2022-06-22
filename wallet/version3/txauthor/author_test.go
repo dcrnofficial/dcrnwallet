@@ -10,11 +10,11 @@ import (
 
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/decred/dcrwallet/errors/v2"
-	"github.com/decred/dcrwallet/wallet/v3/txauthor"
-	. "github.com/decred/dcrwallet/wallet/v3/txauthor"
-	"github.com/decred/dcrwallet/wallet/v3/txrules"
-	"github.com/decred/dcrwallet/wallet/v3/txsizes"
+	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txauthor"
+	. "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txauthor"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txrules"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txsizes"
 )
 
 type AuthorTestChangeSource struct{}

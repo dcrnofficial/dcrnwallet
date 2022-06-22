@@ -20,8 +20,8 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	_ "github.com/decred/dcrwallet/wallet/v3/drivers/bdb"
-	"github.com/decred/dcrwallet/wallet/v3/walletdb"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/drivers/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 var dbUpgradeTests = [...]struct {
