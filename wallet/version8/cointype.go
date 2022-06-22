@@ -7,7 +7,7 @@ package wallet
 import (
 	"context"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"

@@ -14,7 +14,7 @@ import (
 	"strings"
 	"unicode"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/walletseed"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	"golang.org/x/crypto/ssh/terminal"

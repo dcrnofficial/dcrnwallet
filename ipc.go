@@ -12,7 +12,7 @@ import (
 	"io"
 	"os"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 )
 
 // Messages sent over a pipe are encoded using a simple binary message format:

@@ -17,9 +17,9 @@ import (
 	"sync"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/deployments"
-	"dcrn.xyz/dcrnwallet/errors"
-	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	deployments "dcrn.xyz/dcrnwallet/deployments/version8"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
+	dcrd "dcrn.xyz/dcrnwallet/rpc/client/dcrd/version8"
 	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"dcrn.xyz/dcrnwallet/wallet/version8/internal/compat"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"

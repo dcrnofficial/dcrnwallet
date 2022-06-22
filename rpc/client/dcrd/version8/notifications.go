@@ -7,7 +7,7 @@ package dcrd
 import (
 	"encoding/json"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 )

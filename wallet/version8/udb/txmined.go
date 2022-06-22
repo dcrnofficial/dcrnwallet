@@ -12,7 +12,7 @@ import (
 	"sort"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txauthor"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txsizes"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"

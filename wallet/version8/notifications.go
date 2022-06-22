@@ -10,8 +10,8 @@ import (
 	"context"
 	"sync"
 
-	"dcrn.xyz/dcrnwallet/errors"
-	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
+	dcrd "dcrn.xyz/dcrnwallet/rpc/client/dcrd/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"

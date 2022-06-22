@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/internal/loader"
 	"dcrn.xyz/dcrnwallet/internal/rpc/jsonrpc"
 	"dcrn.xyz/dcrnwallet/internal/rpc/rpcserver"

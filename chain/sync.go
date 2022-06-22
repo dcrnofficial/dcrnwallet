@@ -14,8 +14,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"dcrn.xyz/dcrnwallet/errors"
-	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
+	dcrd "dcrn.xyz/dcrnwallet/rpc/client/dcrd/version8"
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"

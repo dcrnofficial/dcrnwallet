@@ -13,8 +13,8 @@ import (
 	"math/big"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/deployments"
-	"dcrn.xyz/dcrnwallet/errors"
+	deployments "dcrn.xyz/dcrnwallet/deployments/version8"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"

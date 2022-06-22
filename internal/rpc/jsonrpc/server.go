@@ -20,7 +20,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/internal/loader"
 	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"

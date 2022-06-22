@@ -19,7 +19,7 @@ import (
 	"sort"
 	"strings"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/internal/cfgutil"
 	"dcrn.xyz/dcrnwallet/internal/netparams"
 	"dcrn.xyz/dcrnwallet/version"

@@ -13,7 +13,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/lru"
 	"dcrn.xyz/dcrnwallet/version"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"

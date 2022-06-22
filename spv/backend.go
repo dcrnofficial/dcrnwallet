@@ -9,9 +9,9 @@ import (
 	"runtime"
 	"sync"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/p2p"
-	"dcrn.xyz/dcrnwallet/validate"
+	validate "dcrn.xyz/dcrnwallet/validate/version8"
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"

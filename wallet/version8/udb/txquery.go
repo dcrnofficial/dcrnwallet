@@ -6,7 +6,7 @@
 package udb
 
 import (
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"

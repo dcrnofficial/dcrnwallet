@@ -13,10 +13,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/lru"
 	"dcrn.xyz/dcrnwallet/p2p"
-	"dcrn.xyz/dcrnwallet/validate"
+	validate "dcrn.xyz/dcrnwallet/validate/version8"
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"

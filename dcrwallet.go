@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"dcrn.xyz/dcrnwallet/chain"
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	ldr "dcrn.xyz/dcrnwallet/internal/loader"
 	"dcrn.xyz/dcrnwallet/internal/prompt"
 	"dcrn.xyz/dcrnwallet/internal/rpc/rpcserver"

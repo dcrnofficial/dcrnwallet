@@ -7,7 +7,7 @@
 package txauthor
 
 import (
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txsizes"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"

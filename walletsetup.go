@@ -14,7 +14,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/internal/loader"
 	"dcrn.xyz/dcrnwallet/internal/prompt"
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"

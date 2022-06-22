@@ -7,7 +7,7 @@ package udb
 import (
 	"context"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 )

@@ -10,7 +10,7 @@ package cfgutil
 import (
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"github.com/Decred-Next/dcrnd/certgen/v8"
 )
 

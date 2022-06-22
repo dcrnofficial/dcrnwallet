@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"testing"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 )
 
 var (

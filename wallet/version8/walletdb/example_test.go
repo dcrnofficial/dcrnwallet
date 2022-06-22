@@ -15,7 +15,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	_ "dcrn.xyz/dcrnwallet/wallet/version8/internal/bdb"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 )

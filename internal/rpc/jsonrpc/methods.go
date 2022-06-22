@@ -19,9 +19,9 @@ import (
 	"sync"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/p2p"
-	"dcrn.xyz/dcrnwallet/rpc/client/dcrd"
+	dcrd "dcrn.xyz/dcrnwallet/rpc/client/dcrd/version8"
 	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
 	"dcrn.xyz/dcrnwallet/version"
 	wallet "dcrn.xyz/dcrnwallet/wallet/version8"

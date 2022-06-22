@@ -10,7 +10,7 @@ import (
 	"encoding/hex"
 	"strings"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/pgpwordlist"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 )

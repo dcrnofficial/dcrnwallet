@@ -5,7 +5,7 @@
 package udb
 
 import (
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 )
 

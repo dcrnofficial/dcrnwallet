@@ -17,7 +17,7 @@ import (
 	"sync"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txauthor"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txsizes"

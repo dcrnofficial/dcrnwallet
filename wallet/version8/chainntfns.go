@@ -10,7 +10,7 @@ import (
 	"math/big"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/errors"
+	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
 	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
 	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
