@@ -4,24 +4,24 @@ go 1.13
 
 require (
 	github.com/Decred-Next/cspp/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/addrmgr/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/blockchain/standalone/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/blockchain/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/certgen/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/chaincfg/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/connmgr/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/dcrec/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/dcrjson/version3/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/dcrutil/version31/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/gcs/version1/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/hdkeychain/version31/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/txscript/version2/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/txscript/version31/v8 v8.0.9
-	github.com/Decred-Next/dcrnd/wire/v8 v8.0.9
+	github.com/Decred-Next/dcrnd/addrmgr/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/blockchain/standalone/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/blockchain/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/certgen/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/chaincfg/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/connmgr/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/dcrec/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/dcrjson/version3/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/dcrutil/version31/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/gcs/version1/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/hdkeychain/version31/v8 v8.0.0
+	github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/txscript/version2/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/txscript/version31/v8 v8.0.10
+	github.com/Decred-Next/dcrnd/wire/v8 v8.0.10
 	github.com/Decred-Next/go-socks/v8 v8.0.9
 	github.com/Decred-Next/slog/v8 v8.0.9
 	github.com/dchest/siphash v1.2.2 // indirect
