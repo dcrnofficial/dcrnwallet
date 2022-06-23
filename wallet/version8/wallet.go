@@ -30,11 +30,10 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
-	"github.com/Decred-Next/dcrnd/dcrec/secp256k1/version3/v8/ecdsa"
 
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
-	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
+	gcs "github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
@@ -1668,7 +1667,7 @@ func VerifyMessage(msg string, addr dcrutil.Address, sig []byte, params dcrutil.
 	wire.WriteVarString(&buf, 0, "Decred Signed Message:\n")
 	wire.WriteVarString(&buf, 0, msg)
 	expectedMessageHash := chainhash.HashB(buf.Bytes())
-	pk, wasCompressed, err := ecdsa.RecoverCompact(sig, expectedMessageHash)
+	pk, wasCompressed, err := secp256k1.RecoverCompact(sig, expectedMessageHash)
 	if err != nil {
 		return false, errors.E(op, err)
 	}
