@@ -1,4 +1,4 @@
-module dcrn.xyz/dcrnwallet
+module github.com/dcrnwallet/v8
 
 go 1.13
 
