@@ -14,17 +14,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/internal/loader"
-	"dcrn.xyz/dcrnwallet/internal/prompt"
-	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
-	_ "dcrn.xyz/dcrnwallet/wallet/version8/drivers/bdb"
-	"dcrn.xyz/dcrnwallet/walletseed"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/loader"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/prompt"
+	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
+	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/drivers/bdb"
+	"github.com/Decred-Next/dcrnwallet/v8/walletseed"
 )
 
 // networkDir returns the directory name of a network directory to hold wallet

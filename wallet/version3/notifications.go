@@ -19,8 +19,8 @@ import (
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
 	"github.com/Decred-Next/dcrnwallet/rpc/client/dcrd/version1/v8"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 // TODO: It would be good to send errors during notification creation to the rpc

@@ -10,9 +10,9 @@ import (
 	"encoding/hex"
 	"strings"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/pgpwordlist"
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/pgpwordlist"
 )
 
 // GenerateRandomSeed returns a new seed created from a cryptographically-secure

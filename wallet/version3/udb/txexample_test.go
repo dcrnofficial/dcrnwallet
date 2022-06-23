@@ -3,7 +3,8 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-//+build ignore
+//go:build ignore
+// +build ignore
 
 package udb
 
@@ -13,7 +14,7 @@ import (
 
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 func ExampleStore_Rollback(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"testing"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
 )
 
 var (

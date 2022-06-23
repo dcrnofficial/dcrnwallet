@@ -1,3 +1,4 @@
+
 module github.com/Decred-Next/dcrnwallet/rpc/jsonrpc/types/version14/v8
 
 go 1.12

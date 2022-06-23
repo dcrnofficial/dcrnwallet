@@ -13,9 +13,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/lru"
-	"dcrn.xyz/dcrnwallet/version"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
@@ -23,6 +20,9 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/lru"
+	"github.com/Decred-Next/dcrnwallet/v8/version"
 	"golang.org/x/sync/errgroup"
 )
 

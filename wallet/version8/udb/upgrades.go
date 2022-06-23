@@ -8,10 +8,6 @@ import (
 	"context"
 	"crypto/sha256"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/wallet/version8/internal/compat"
-	"dcrn.xyz/dcrnwallet/wallet/version8/internal/snacl"
-	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
@@ -19,6 +15,10 @@ import (
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/compat"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/snacl"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
 )
 
 // Note: all manager functions always use the latest version of the database.

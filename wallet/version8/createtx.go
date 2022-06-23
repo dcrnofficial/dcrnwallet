@@ -17,12 +17,6 @@ import (
 	"sync"
 	"time"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/wallet/version8/txauthor"
-	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
-	"dcrn.xyz/dcrnwallet/wallet/version8/txsizes"
-	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
-	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/cspp/v8"
 	"github.com/Decred-Next/cspp/v8/coinjoin"
 	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
@@ -33,6 +27,12 @@ import (
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txauthor"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txrules"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txsizes"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/udb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
 )
 
 // --------------------------------------------------------------------------------

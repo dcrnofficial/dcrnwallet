@@ -7,9 +7,9 @@ package udb
 import (
 	"context"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
 )
 
 // Old package namespace bucket keys.  These are still used as of the very first

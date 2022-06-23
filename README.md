@@ -98,7 +98,7 @@ through a single command, without needing to clone the repo.  While outside of
 any module (`go env GOMOD` prints an empty newline), run:
 
 ```
-GO111MODULE=on go get dcrn.xyz/dcrnwallet
+GO111MODULE=on go get github.com/Decred-Next/dcrnwallet/v8
 ```
 
 An optional version, branch, or tag may be appended following a `@` character

@@ -9,16 +9,16 @@ import (
 	"runtime"
 	"sync"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/p2p"
-	validate "dcrn.xyz/dcrnwallet/validate/version8"
-	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/p2p"
+	validate "github.com/Decred-Next/dcrnwallet/v8/validate/version8"
+	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
 )
 
 var _ wallet.NetworkBackend = (*Syncer)(nil)

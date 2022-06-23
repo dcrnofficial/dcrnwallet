@@ -12,11 +12,11 @@ import (
 	"io/ioutil"
 	"strings"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
 )
 
 type deserializer interface {

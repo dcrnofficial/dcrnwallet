@@ -13,15 +13,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/lru"
-	"dcrn.xyz/dcrnwallet/p2p"
-	validate "dcrn.xyz/dcrnwallet/validate/version8"
-	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/lru"
+	"github.com/Decred-Next/dcrnwallet/v8/p2p"
+	validate "github.com/Decred-Next/dcrnwallet/v8/validate/version8"
+	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
 	"golang.org/x/sync/errgroup"
 )
 

@@ -6,7 +6,7 @@ package udb
 
 import (
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 type unifiedDBMetadata struct {

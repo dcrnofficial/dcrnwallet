@@ -14,12 +14,12 @@ import (
 	"io"
 	"os"
 
+	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8seed"
 	"github.com/decred/dcrd/chaincfg"
 	"github.com/decred/dcrutil/hdkeychain"
-	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/bdb"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8seed"
 )
 
 const dbname = "v3.db"

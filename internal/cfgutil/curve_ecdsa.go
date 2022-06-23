@@ -10,8 +10,8 @@ package cfgutil
 import (
 	"time"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"github.com/Decred-Next/dcrnd/certgen/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
 )
 
 // PreferredCurve is the curve that should be used as the application default.

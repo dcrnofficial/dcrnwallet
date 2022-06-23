@@ -10,11 +10,11 @@ import (
 	"testing"
 	"time"
 
-	_ "dcrn.xyz/dcrnwallet/wallet/version8/internal/bdb"
-	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
 )
 
 func insertMainChainHeaders(s *Store, ns walletdb.ReadWriteBucket, addrmgrNs walletdb.ReadBucket,

@@ -16,10 +16,10 @@ import (
 	"strings"
 	"time"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	"dcrn.xyz/dcrnwallet/internal/loader"
-	"dcrn.xyz/dcrnwallet/internal/rpc/jsonrpc"
-	"dcrn.xyz/dcrnwallet/internal/rpc/rpcserver"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/loader"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/rpc/jsonrpc"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/rpc/rpcserver"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

@@ -8,7 +8,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 // TestDiscoveryCursorPos tests that the account cursor index is not reset

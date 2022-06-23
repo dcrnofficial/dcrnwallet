@@ -8,8 +8,8 @@ package jsonrpc
 import (
 	"fmt"
 
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
 	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
 )
 
 func convertError(err error) *dcrjson.RPCError {

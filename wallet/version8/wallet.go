@@ -17,19 +17,19 @@ import (
 	"sync"
 	"time"
 
-	deployments "dcrn.xyz/dcrnwallet/deployments/version8"
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	dcrd "dcrn.xyz/dcrnwallet/rpc/client/dcrd/version8"
-	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
-	"dcrn.xyz/dcrnwallet/wallet/version8/internal/compat"
-	"dcrn.xyz/dcrnwallet/wallet/version8/txrules"
-	"dcrn.xyz/dcrnwallet/wallet/version8/udb"
-	"dcrn.xyz/dcrnwallet/wallet/version8/walletdb"
 	"github.com/Decred-Next/dcrnd/blockchain/stake/version31/v8"
 	blockchain "github.com/Decred-Next/dcrnd/blockchain/standalone/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	secp256k1 "github.com/Decred-Next/dcrnd/dcrec/secp256k1/version31/v8"
+	deployments "github.com/Decred-Next/dcrnwallet/v8/deployments/version8"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	dcrd "github.com/Decred-Next/dcrnwallet/v8/rpc/client/dcrd/version8"
+	types "github.com/Decred-Next/dcrnwallet/v8/rpc/jsonrpc/types/version15"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/compat"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txrules"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/udb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
 
 	"github.com/Decred-Next/dcrnd/dcrec/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
@@ -1650,7 +1650,7 @@ func (w *Wallet) SignMessage(ctx context.Context, msg string, addr dcrutil.Addre
 	if err != nil {
 		return nil, errors.E(op, err)
 	}
-	sig,err = secp256k1.SignCompact(privKey, messageHash, true)
+	sig, err = secp256k1.SignCompact(privKey, messageHash, true)
 	if err != nil {
 		return nil, errors.E(op, err)
 	}

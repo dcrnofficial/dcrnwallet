@@ -13,8 +13,8 @@ import (
 	"os"
 	"strings"
 
-	"dcrn.xyz/dcrnwallet/internal/rpchelp"
-	types "dcrn.xyz/dcrnwallet/rpc/jsonrpc/types/version15"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/rpchelp"
+	types "github.com/Decred-Next/dcrnwallet/v8/rpc/jsonrpc/types/version15"
 	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
 )
 

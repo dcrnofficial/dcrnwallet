@@ -16,9 +16,9 @@ import (
 	"github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/compat"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/snacl"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/internal/compat"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/internal/snacl"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 // Note: all manager functions always use the latest version of the database.

@@ -19,18 +19,18 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"dcrn.xyz/dcrnwallet/chain"
-	errors "dcrn.xyz/dcrnwallet/errors/version8"
-	ldr "dcrn.xyz/dcrnwallet/internal/loader"
-	"dcrn.xyz/dcrnwallet/internal/prompt"
-	"dcrn.xyz/dcrnwallet/internal/rpc/rpcserver"
-	"dcrn.xyz/dcrnwallet/p2p"
-	"dcrn.xyz/dcrnwallet/spv"
-	"dcrn.xyz/dcrnwallet/ticketbuyer"
-	"dcrn.xyz/dcrnwallet/version"
-	wallet "dcrn.xyz/dcrnwallet/wallet/version8"
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	"github.com/Decred-Next/dcrnwallet/v8/chain"
+	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	ldr "github.com/Decred-Next/dcrnwallet/v8/internal/loader"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/prompt"
+	"github.com/Decred-Next/dcrnwallet/v8/internal/rpc/rpcserver"
+	"github.com/Decred-Next/dcrnwallet/v8/p2p"
+	"github.com/Decred-Next/dcrnwallet/v8/spv"
+	"github.com/Decred-Next/dcrnwallet/v8/ticketbuyer"
+	"github.com/Decred-Next/dcrnwallet/v8/version"
+	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
 )
 
 func init() {

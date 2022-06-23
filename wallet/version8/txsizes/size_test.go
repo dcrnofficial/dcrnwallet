@@ -3,8 +3,8 @@ package txsizes_test
 import (
 	"testing"
 
-	. "dcrn.xyz/dcrnwallet/wallet/version8/txsizes"
 	"github.com/Decred-Next/dcrnd/wire/v8"
+	. "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txsizes"
 )
 
 const (

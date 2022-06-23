@@ -13,8 +13,8 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/dcrutil/version2/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	_ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/drivers/bdb"
-	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
+	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/drivers/bdb"
+	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
 )
 
 func TestInsertsCreditsDebitsRollbacks(t *testing.T) {
