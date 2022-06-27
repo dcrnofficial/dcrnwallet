@@ -7,7 +7,7 @@ require (
 	github.com/Decred-Next/dcrnd/dcrutil/version2/v8 v8.0.11
 	github.com/Decred-Next/dcrnd/gcs/version1/v8 v8.0.11
 	github.com/Decred-Next/dcrnd/wire/v8 v8.0.11
-	github.com/Decred-Next/dcrnwallet/errors/version2/v8 v8.0.9
+	github.com/Decred-Next/dcrnwallet/errors/version2/v8 v8.0.12
 	github.com/decred/base58 v1.0.4 // indirect
 	github.com/jrick/bitset v1.0.0
 	github.com/jrick/wsrpc/v2 v2.0.0
