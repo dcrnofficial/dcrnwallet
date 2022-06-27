@@ -1,4 +1,4 @@
-set version=v8.0.10
+set version=v8.0.11
 git tag -a rpc/jsonrpc/types/version14/%version% -m "%version%"
 git tag -a rpc/jsonrpc/types/version20/%version% -m "%version%"
 git tag -a rpc/client/dcrd/version1/%version% -m "%version%"
