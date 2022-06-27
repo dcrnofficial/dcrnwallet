@@ -21,10 +21,10 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txauthor"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txsizes"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/txauthor"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/txsizes"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 	"golang.org/x/crypto/ripemd160"
 )
 

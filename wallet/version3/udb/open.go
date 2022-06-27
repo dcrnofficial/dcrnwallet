@@ -9,7 +9,7 @@ import (
 
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 // Open opens the database and returns various "manager" types that must be used

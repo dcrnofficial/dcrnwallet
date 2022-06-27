@@ -8,7 +8,7 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 // CFilter returns the saved regular compact filter for a block.

@@ -8,7 +8,7 @@
 package rpchelp
 
 import (
-	types "github.com/Decred-Next/dcrnwallet/v8/rpc/jsonrpc/types/version15"
+	types "github.com/Decred-Next/dcrnwallet/rpc/jsonrpc/types/version15"
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
 )
 

@@ -15,9 +15,9 @@ import (
 	"os"
 	"path/filepath"
 
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/bdb"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 // This example demonstrates creating a new database.

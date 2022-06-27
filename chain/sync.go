@@ -16,9 +16,9 @@ import (
 
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	dcrd "github.com/Decred-Next/dcrnwallet/v8/rpc/client/dcrd/version8"
-	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	dcrd "github.com/Decred-Next/dcrnwallet/rpc/client/dcrd/version8"
+	wallet "github.com/Decred-Next/dcrnwallet/wallet/version8"
 	"github.com/jrick/wsrpc/v2"
 	"golang.org/x/sync/errgroup"
 )

@@ -21,16 +21,16 @@ import (
 
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/Decred-Next/dcrnwallet/v8/chain"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	ldr "github.com/Decred-Next/dcrnwallet/v8/internal/loader"
-	"github.com/Decred-Next/dcrnwallet/v8/internal/prompt"
-	"github.com/Decred-Next/dcrnwallet/v8/internal/rpc/rpcserver"
-	"github.com/Decred-Next/dcrnwallet/v8/p2p"
-	"github.com/Decred-Next/dcrnwallet/v8/spv"
-	"github.com/Decred-Next/dcrnwallet/v8/ticketbuyer"
-	"github.com/Decred-Next/dcrnwallet/v8/version"
-	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
+	"github.com/Decred-Next/dcrnwallet/chain"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	ldr "github.com/Decred-Next/dcrnwallet/internal/loader"
+	"github.com/Decred-Next/dcrnwallet/internal/prompt"
+	"github.com/Decred-Next/dcrnwallet/internal/rpc/rpcserver"
+	"github.com/Decred-Next/dcrnwallet/p2p"
+	"github.com/Decred-Next/dcrnwallet/spv"
+	"github.com/Decred-Next/dcrnwallet/ticketbuyer"
+	"github.com/Decred-Next/dcrnwallet/version"
+	wallet "github.com/Decred-Next/dcrnwallet/wallet/version8"
 )
 
 func init() {

@@ -13,9 +13,9 @@ import (
 
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
-	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/drivers/bdb" // driver loaded during init
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	wallet "github.com/Decred-Next/dcrnwallet/wallet/version8"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version8/drivers/bdb" // driver loaded during init
 )
 
 const (

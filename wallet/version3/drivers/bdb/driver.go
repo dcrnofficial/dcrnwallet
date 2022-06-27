@@ -13,4 +13,4 @@
 //  if err != nil { /* handle error */ }
 package bdb
 
-import _ "github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/internal/bdb" // Register bdb driver during init
+import _ "github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/bdb" // Register bdb driver during init

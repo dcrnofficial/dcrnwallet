@@ -12,9 +12,9 @@ import (
 	"os"
 	"testing"
 
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	_ "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/bdb"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	_ "github.com/Decred-Next/dcrnwallet/wallet/version8/internal/bdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 // dbType is the database type name for this driver.

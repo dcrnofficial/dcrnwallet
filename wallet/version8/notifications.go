@@ -17,10 +17,10 @@ import (
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	dcrd "github.com/Decred-Next/dcrnwallet/v8/rpc/client/dcrd/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/udb"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	dcrd "github.com/Decred-Next/dcrnwallet/rpc/client/dcrd/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 // TODO: It would be good to send errors during notification creation to the rpc

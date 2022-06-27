@@ -15,10 +15,10 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/p2p"
-	validate "github.com/Decred-Next/dcrnwallet/v8/validate/version8"
-	wallet "github.com/Decred-Next/dcrnwallet/v8/wallet/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/p2p"
+	validate "github.com/Decred-Next/dcrnwallet/validate/version8"
+	wallet "github.com/Decred-Next/dcrnwallet/wallet/version8"
 )
 
 var _ wallet.NetworkBackend = (*Syncer)(nil)

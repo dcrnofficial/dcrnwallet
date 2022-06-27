@@ -16,7 +16,7 @@ import (
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
 	"github.com/jrick/bitset"
 	"github.com/jrick/wsrpc/v2"
 	"golang.org/x/sync/errgroup"

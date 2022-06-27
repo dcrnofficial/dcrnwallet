@@ -14,7 +14,7 @@ import (
 
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 func ExampleStore_Rollback(t *testing.T) {

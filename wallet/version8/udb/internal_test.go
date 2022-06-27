@@ -13,8 +13,8 @@ interface. The functions are only exported while the tests are being run.
 package udb
 
 import (
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/internal/snacl"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/internal/snacl"
 )
 
 // TstLatestMgrVersion makes the unexported latestMgrVersion variable available

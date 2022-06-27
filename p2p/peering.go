@@ -20,9 +20,9 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/lru"
-	"github.com/Decred-Next/dcrnwallet/v8/version"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/lru"
+	"github.com/Decred-Next/dcrnwallet/version"
 	"golang.org/x/sync/errgroup"
 )
 

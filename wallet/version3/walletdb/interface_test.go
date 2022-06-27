@@ -20,7 +20,7 @@ import (
 	"testing"
 
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 // errSubTestFail is used to signal that a sub test returned false.

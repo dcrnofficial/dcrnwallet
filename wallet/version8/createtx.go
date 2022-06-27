@@ -27,12 +27,12 @@ import (
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	txscript "github.com/Decred-Next/dcrnd/txscript/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txauthor"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txrules"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txsizes"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/udb"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/txauthor"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/txrules"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/txsizes"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 // --------------------------------------------------------------------------------

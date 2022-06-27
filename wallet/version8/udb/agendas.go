@@ -5,8 +5,8 @@
 package udb
 
 import (
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 type agendaPreferencesTy struct {

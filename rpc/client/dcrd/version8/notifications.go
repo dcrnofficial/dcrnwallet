@@ -9,7 +9,7 @@ import (
 
 	"github.com/Decred-Next/dcrnd/chaincfg/chainhash/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
 )
 
 func unmarshalArray(j json.RawMessage, params ...interface{}) error {

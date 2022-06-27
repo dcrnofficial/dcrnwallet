@@ -1,4 +1,4 @@
-module github.com/Decred-Next/dcrnwallet/v8
+module github.com/Decred-Next/dcrnwallet
 
 go 1.13
 

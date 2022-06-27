@@ -5,6 +5,6 @@
 
 package main
 
-import "github.com/Decred-Next/dcrnwallet/v8/internal/netparams"
+import "github.com/Decred-Next/dcrnwallet/internal/netparams"
 
 var activeNet = &netparams.MainNetParams

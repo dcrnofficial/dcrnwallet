@@ -5,7 +5,7 @@ import (
 
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
-	. "github.com/Decred-Next/dcrnwallet/v8/wallet/version8/txrules"
+	. "github.com/Decred-Next/dcrnwallet/wallet/version8/txrules"
 )
 
 func TestStakePoolTicketFee(t *testing.T) {

@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	hdkeychain "github.com/Decred-Next/dcrnd/hdkeychain/version31/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/pgpwordlist"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/pgpwordlist"
 )
 
 // GenerateRandomSeed returns a new seed created from a cryptographically-secure

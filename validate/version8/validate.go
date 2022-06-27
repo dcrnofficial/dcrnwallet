@@ -14,7 +14,7 @@ import (
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8"
 	"github.com/Decred-Next/dcrnd/gcs/version1/v8/blockcf"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
 )
 
 // MerkleRoots recreates the merkle roots of regular and stake transactions from

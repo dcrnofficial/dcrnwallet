@@ -13,7 +13,7 @@ import (
 	"io"
 	"runtime/trace"
 
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
 )
 
 // ReadTx represents a database transaction that can only be used for reads.  If

@@ -18,9 +18,9 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	dcrutil "github.com/Decred-Next/dcrnd/dcrutil/version31/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
-	deployments "github.com/Decred-Next/dcrnwallet/v8/deployments/version8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version8/walletdb"
+	deployments "github.com/Decred-Next/dcrnwallet/deployments/version8"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/wallet/version8/walletdb"
 )
 
 var (

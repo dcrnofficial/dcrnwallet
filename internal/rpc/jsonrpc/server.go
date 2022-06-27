@@ -23,9 +23,9 @@ import (
 	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/dcrjson/version3/v8"
 	dcrdtypes "github.com/Decred-Next/dcrnd/rpc/jsonrpc/types/version1/v8"
-	errors "github.com/Decred-Next/dcrnwallet/v8/errors/version8"
-	"github.com/Decred-Next/dcrnwallet/v8/internal/loader"
-	types "github.com/Decred-Next/dcrnwallet/v8/rpc/jsonrpc/types/version15"
+	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
+	"github.com/Decred-Next/dcrnwallet/internal/loader"
+	types "github.com/Decred-Next/dcrnwallet/rpc/jsonrpc/types/version15"
 	"github.com/gorilla/websocket"
 )
 

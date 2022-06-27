@@ -15,10 +15,10 @@ import (
 	"github.com/Decred-Next/dcrnd/hdkeychain/version2/v8"
 	"github.com/Decred-Next/dcrnd/txscript/version2/v8"
 	"github.com/Decred-Next/dcrnwallet/errors/version2/v8"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/internal/compat"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/txsizes"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/udb"
-	"github.com/Decred-Next/dcrnwallet/v8/wallet/version3/v8/walletdb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/internal/compat"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/txsizes"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/udb"
+	"github.com/Decred-Next/dcrnwallet/wallet/version3/v8/walletdb"
 )
 
 // V0Scripter is a type (usually addresses) which create or encode to version 0
