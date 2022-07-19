@@ -20,6 +20,7 @@ import (
 	"time"
 
 	"github.com/Decred-Next/dcrnd/addrmgr/v8"
+	"github.com/Decred-Next/dcrnd/chaincfg/v8"
 	"github.com/Decred-Next/dcrnd/wire/v8"
 	"github.com/Decred-Next/dcrnwallet/chain"
 	errors "github.com/Decred-Next/dcrnwallet/errors/version8"
@@ -89,6 +90,13 @@ func run(ctx context.Context) error {
 		}
 	}()
 
+	if cfg.TestNet{
+		params := chaincfg.TestNet3Params()
+		log.Infof("test net:%d",uint32(params.Net))
+	}else if !cfg.TestNet && !cfg.SimNet {
+		params := chaincfg.MainNetParams()
+		log.Infof("main net:%d",uint32(params.Net))
+	}
 	// Show version at startup.
 	log.Infof("Version %s (Go version %s %s/%s)", version.String(), runtime.Version(),
 		runtime.GOOS, runtime.GOARCH)
