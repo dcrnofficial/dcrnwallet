@@ -1292,6 +1292,13 @@ func NewWalletPassphraseChangeCmd(oldPassphrase, newPassphrase string) *WalletPa
 	}
 }
 
+type SendBlobTxCmd struct {
+}
+
+func NewSendBlobTxCmd() *SendBlobTxCmd {
+	return &SendBlobTxCmd{}
+}
+
 // MixAccountCmd defines the mixaccount JSON-RPC command.
 type MixAccountCmd struct{}
 
@@ -1368,6 +1375,7 @@ func init() {
 		{"rescanwallet", (*RescanWalletCmd)(nil)},
 		{"revoketickets", (*RevokeTicketsCmd)(nil)},
 		{"sendfrom", (*SendFromCmd)(nil)},
+		{"sendblobtx", (*SendBlobTxCmd)(nil)},
 		{"getUnsignedTx", (*SendFromCmd)(nil)},
 		{"sendmany", (*SendManyCmd)(nil)},
 		{"sendtoaddress", (*SendToAddressCmd)(nil)},

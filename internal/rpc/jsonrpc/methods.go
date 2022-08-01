@@ -116,6 +116,7 @@ var handlers = map[string]handler{
 	"rescanwallet":            {fn: (*Server).rescanWallet},
 	"revoketickets":           {fn: (*Server).revokeTickets},
 	"sendfrom":                {fn: (*Server).sendFrom},
+	"sendblobtx":              {fn: (*Server).sendBlobTx},
 	"getUnsignedTx":           {fn: (*Server).getUnsignedTx},
 	"sendmany":                {fn: (*Server).sendMany},
 	"sendtoaddress":           {fn: (*Server).sendToAddress},
@@ -2972,6 +2973,34 @@ func (s *Server) sendFrom(ctx context.Context, icmd interface{}) (interface{}, e
 	log.Warnf("accountByte: %s", string(accountByte))
 	log.Warnf("minConfByte: %s", string(minConfByte))
 	return s.sendPairs(ctx, w, pairs, account, minConf)
+}
+
+func (s *Server) sendBlobTx(ctx context.Context, icmd interface{}) (interface{}, error) {
+	var pkscript []byte
+	pkscript = append(pkscript, byte(106))
+	buf := bytes.NewBuffer(pkscript)
+	buf.Write([]byte("nulldata tx test"))
+
+	txout := *wire.NewTxOut(0, pkscript)
+	var txOuts []*wire.TxOut
+
+	txOuts = append(txOuts, &txout)
+	msgTx := &wire.MsgTx{
+		//CachedHash
+		SerType: wire.TxSerializeFull,
+		Version: 1,
+		//TxIn:
+		//TxOut:    txOuts,
+		LockTime: 0,
+		Expiry:   5,
+	}
+	w, _ := s.walletLoader.LoadedWallet()
+	n, _ := w.NetworkBackend()
+	err := n.PublishTransactions(ctx, msgTx)
+	if err != nil {
+		return nil, err
+	}
+	return msgTx.TxHash(), nil
 }
 
 func (s *Server) getUnsignedTx(ctx context.Context, icmd interface{}) (interface{}, error) {
