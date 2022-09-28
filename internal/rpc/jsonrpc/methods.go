@@ -110,8 +110,6 @@ var handlers = map[string]handler{
 	"listtransactions":        {fn: (*Server).listTransactions},
 	"listunspent":             {fn: (*Server).listUnspent},
 	"lockunspent":             {fn: (*Server).lockUnspent},
-	"mixaccount":              {fn: (*Server).mixAccount},
-	"mixoutput":               {fn: (*Server).mixOutput},
 	"purchaseticket":          {fn: (*Server).purchaseTicket},
 	"rescanwallet":            {fn: (*Server).rescanWallet},
 	"revoketickets":           {fn: (*Server).revokeTickets},

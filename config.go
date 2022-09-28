@@ -7,10 +7,7 @@ package main
 
 import (
 	"context"
-	"crypto/tls"
-	"crypto/x509"
 	"fmt"
-	"io/ioutil"
 	"net"
 	"os"
 	"os/user"
@@ -145,15 +142,15 @@ type config struct {
 	RPCListenerEvents bool  `long:"rpclistenerevents" description:"Notify JSON-RPC and gRPC listener addresses over the TX pipe"`
 
 	// CSPP
-	CSPPServer         string `long:"csppserver" description:"Network address of CoinShuffle++ server"`
-	CSPPServerCA       string `long:"csppserver.ca" description:"CoinShuffle++ Certificate Authority"`
+	CSPPServer         string
+	CSPPServerCA       string
 	dialCSPPServer     func(ctx context.Context, network, addr string) (net.Conn, error)
-	MixedAccount       string `long:"mixedaccount" description:"Account/branch used to derive CoinShuffle++ mixed outputs and voting rewards"`
+	MixedAccount       string
 	mixedAccount       string
 	mixedBranch        uint32
-	TicketSplitAccount string `long:"ticketsplitaccount" description:"Account to derive fresh addresses from for mixed ticket splits; uses mixedaccount if unset"`
-	ChangeAccount      string `long:"changeaccount" description:"Account used to derive unmixed CoinJoin outputs in CoinShuffle++ protocol"`
-	MixChange          bool   `long:"mixchange" description:"Use CoinShuffle++ to mix change account outputs into mix account"`
+	TicketSplitAccount string
+	ChangeAccount      string
+	MixChange          bool
 
 	TBOpts ticketBuyerOptions `group:"Ticket Buyer Options" namespace:"ticketbuyer"`
 
@@ -693,64 +690,16 @@ func loadConfig(ctx context.Context) (*config, []string, error) {
 		}
 	}
 
-	// Create CoinShuffle++ TLS dialer based on server name and certificate
-	// authority settings.
-	csppTLSConfig := new(tls.Config)
-	if cfg.CSPPServer != "" {
-		csppTLSConfig.ServerName, _, err = net.SplitHostPort(cfg.CSPPServer)
-		if err != nil {
-			err := errors.Errorf("Cannot parse CoinShuffle++ "+
-				"server name %q: %v", cfg.CSPPServer, err)
-			fmt.Fprintln(os.Stderr, err.Error())
-			return loadConfigError(err)
-		}
-	}
-	if cfg.CSPPServerCA != "" {
-		cfg.CSPPServerCA = cleanAndExpandPath(cfg.CSPPServerCA)
-		ca, err := ioutil.ReadFile(cfg.CSPPServerCA)
-		if err != nil {
-			err := errors.Errorf("Cannot read CoinShuffle++ "+
-				"Certificate Authority file: %v", err)
-			fmt.Fprintln(os.Stderr, err.Error())
-			return loadConfigError(err)
-		}
-		pool := x509.NewCertPool()
-		pool.AppendCertsFromPEM(ca)
-		csppTLSConfig.RootCAs = pool
-	}
-	cfg.dialCSPPServer = func(ctx context.Context, network, addr string) (net.Conn, error) {
-		conn, err := cfg.dial(ctx, network, addr)
-		if err != nil {
-			return nil, err
-		}
-		conn = tls.Client(conn, csppTLSConfig)
-		return conn, nil
-	}
-
-	// Parse mixedaccount account/branch
-	if cfg.MixedAccount != "" {
-		indexSlash := strings.LastIndex(cfg.MixedAccount, "/")
-		if indexSlash == -1 {
-			err := errors.Errorf("--mixedaccount must have form 'accountname/branch'")
-			fmt.Fprintln(os.Stderr, err)
-			return loadConfigError(err)
-		}
-		cfg.mixedAccount = cfg.MixedAccount[:indexSlash]
-		switch cfg.MixedAccount[indexSlash+1:] {
-		case "0":
-			cfg.mixedBranch = 0
-		case "1":
-			cfg.mixedBranch = 1
-		default:
-			err := errors.Errorf("--mixedaccount branch must be 0 or 1")
-			fmt.Fprintln(os.Stderr, err)
-			return loadConfigError(err)
-		}
-	}
-	// Use mixedaccount as default ticketsplitaccount if unset.
-	if cfg.TicketSplitAccount == "" {
-		cfg.TicketSplitAccount = cfg.mixedAccount
-	}
+	// CSPP
+	cfg.CSPPServer = ""
+	cfg.CSPPServerCA = ""
+	cfg.dialCSPPServer = nil
+	cfg.MixedAccount = ""
+	cfg.mixedAccount = ""
+	cfg.mixedBranch = 0
+	cfg.TicketSplitAccount = ""
+	cfg.ChangeAccount = ""
+	cfg.MixChange = false
 
 	if cfg.RPCConnect == "" {
 		cfg.RPCConnect = net.JoinHostPort("localhost", activeNet.JSONRPCClientPort)
